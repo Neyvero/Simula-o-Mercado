@@ -1,0 +1,18 @@
+[
+    {
+        "itens": [
+            "Maçã - R$ 4.00",
+            "Uva - R$ 7.90"
+        ],
+        "total": 11.9
+    },
+    {
+        "itens": [
+            "Tomate - R$ 5.00",
+            "Pão francês - R$ 0.80",
+            "Pão francês - R$ 0.80",
+            "Pizza congelada - R$ 19.90"
+        ],
+        "total": 26.5
+    }
+]
