@@ -14,5 +14,13 @@
             "Pizza congelada - R$ 19.90"
         ],
         "total": 26.5
+    },
+    {
+        "itens": [
+            "Banana - R$ 3.50",
+            "Banana - R$ 3.50",
+            "Queijo - R$ 14.50"
+        ],
+        "total": 21.5
     }
 ]
