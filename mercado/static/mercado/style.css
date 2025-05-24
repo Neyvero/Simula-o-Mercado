@@ -2,3 +2,39 @@ body {
     background: white url("images/mercado_template.jpg") no-repeat;
     background-size: 1510px 720px;
 }
+
+li:hover {
+  cursor: pointer;
+}
+
+#carr {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;  
+  gap: 12px;              
+}
+
+.carr-buttons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  #labelTotal   { order: 1; margin: 8px 0; }
+/* lista de itens por último */
+  #listaCarrinho { order: 2; }
+}
+
+.titulo {
+  display: flex;
+  justify-content: center; 
+  align-items: center;    
+  top: 50px;        
+}
+
+.carrinho {
+    position: absolute;
+    top: 140px;
+    left: 1300px;
+}
