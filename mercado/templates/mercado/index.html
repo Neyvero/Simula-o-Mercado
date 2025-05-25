@@ -15,39 +15,61 @@
 
 <body>
 <div class="titulo">
-  <h2>Mercado Digital</h2>
+  <h2 class="fs-1" class="fw-bolder" >Mercado Digital</h2>
 </div>
   <!-- Busca de produto -->
   <input type="text" id="entryProduto" placeholder="Buscar produto..." />
-  <button id="btnBuscar">Buscar</button>
+  <button id="btnBuscar" class="btn btn-primary">Buscar</button>
   <textarea id="textResult" rows="1" cols="50" readonly></textarea>
 
   <div id="container">
     <!-- Sessões / Produtos -->
     <div>
-      <h2>Sessões</h2>
+      <h2 class="fs-2 fw-bolder sessao.titulo">Sessões</h2>
       <select id="selectSessao"></select>
       <ul id="listaProduto"></ul>
     </div>
 
     <div id="carr">
     <div class="carr-buttons">
-      <button id="btnAdd">Adicionar</button>
-      <button id="btnRemover">Remover</button>
-      <button id="btnLimpar">Limpar tudo</button>
-      <button id="btnFinalizar">Finalizar compra</button>
-      <button id="btnHistorico">Ver histórico</button>
+      <button id="btnAdd" class="btn btn-primary">Adicionar</button>
+      <button id="btnRemover" class="btn btn-primary">Remover</button>
+      <button id="btnLimpar" class="btn btn-primary">Limpar tudo</button>
+      <button id="btnFinalizar" class="btn btn-primary">Finalizar compra</button>
+      <button id="btnHistorico" class="btn btn-primary">Ver histórico</button>
     </div>
 
     <div class="carrinho">
-      <h2>Carrinho</h2>
+      <h2 class="fs-2 fw-bolder carrinho.titulo">Carrinho</h2>
       <ul id="listaCarrinho"></ul>
       <p id="labelTotal">Total: R$ 0.00</p>
     </div>
   </div>
 </div>
 
+<div id="historyModal" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Histórico de Compras</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body" style="max-height:60vh; overflow-y:auto;">
+        <ul id="historyList" class="list-unstyled"></ul>
+      </div>
+    </div>
+  </div>
+</div>  
+
+
+<div id="historyPanel" class="d-none p-3 border">
+  <h3>Histórico de Compras</h3>
+  <ul id="historyList"></ul>
+</div>
+
   <script>
+    const li = document.createElement('li');
+    li.classList.add('sessao-texto');
     // ----- Lista (contendo os valores-chave de cada item) -----
     const sessao = {
   "Hortifruti": [
@@ -211,18 +233,22 @@
     }
     //-----Puxa os dados do arquivo Historico.json
     function mostrarHistorico() {
-      const hist = JSON.parse(localStorage.getItem('historico') || '[]');
-      if (hist.length === 0) {
-        return alert('Nenhuma compra registrada ainda.');
-      }
-      let texto = '';
-      hist.forEach((c, i) => {
-        texto += `Compra ${i+1} (${new Date(c.data).toLocaleString()}):\n`;
-        c.itens.forEach(item => texto += `  • ${item}\n`);
-        texto += `Total: R$ ${c.total.toFixed(2)}\n\n`;
-      });
-      alert(texto);
-    }
+  const hist = JSON.parse(localStorage.getItem('historico') || '[]');
+  if (!hist.length) return alert('Nenhuma compra registrada ainda.');
+  const ul = document.getElementById('historyList');
+  ul.innerHTML = '';
+  hist.forEach((c,i) => {
+    const li = document.createElement('li');
+    const dt = new Date(c.data).toLocaleString();
+    li.innerHTML = `<strong>Compra ${i+1} (${dt}):</strong>
+                    <ul>${c.itens.map(item => `<li>${item}</li>`).join('')}</ul>
+                    <p>Total: R$ ${c.total.toFixed(2)}</p>
+                    <hr/>`;
+    ul.appendChild(li);
+  });
+  new bootstrap.Modal(document.getElementById('historyModal')).show();
+}
+
 
     // ----- Pesquisa via input -----
     function buscar() {

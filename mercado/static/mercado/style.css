@@ -6,7 +6,7 @@ body {
 li:hover {
   cursor: pointer;
 }
-
+  
 #carr {
   display: flex;
   flex-direction: column;
@@ -37,4 +37,23 @@ li:hover {
     position: absolute;
     top: 140px;
     left: 1300px;
+}
+
+.carrinho-titulo {
+  font-size: 1.5rem;     
+  font-weight: 600;      
+}
+
+.sessao-titulo {
+  font-size: 1.5rem;     
+  font-weight: 600;   
+}
+
+.sessao-texto {
+  font-size: 1.125rem;   
+  line-height: 1.4;      
+}
+
+#listaProduto li {
+  font-size: 1.25rem;  /* 20px */
 }
