@@ -1,6 +1,7 @@
 body {
     background: white url("images/mercado_template.jpg") no-repeat;
     background-size: 1510px 720px;
+
 }
 
 li:hover {
@@ -21,17 +22,17 @@ li:hover {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  #labelTotal   { order: 1; margin: 8px 0; }
-/* lista de itens por último */
-  #listaCarrinho { order: 2; }
 }
 
 .titulo {
-  display: flex;
-  justify-content: center; 
-  align-items: center;    
-  top: 50px;        
+  font-family: 'Press Start 2P', cursive;
+  display: flex-start;
+  padding-left: 10px;
+  justify-content: center;
+  align-items: center;
+  top: 50px;
 }
+
 
 .carrinho {
     position: absolute;
@@ -54,6 +55,40 @@ li:hover {
   line-height: 1.4;      
 }
 
+#listaProduto li:hover {
+  background-color: #007bff; 
+  color: white; 
+  border-color: #007bff;
+}
+
+
+#listaProduto li.selected {
+  background-color: #0056b3; 
+  color: white;
+  border-color: #0056b3; 
+}
+
+
 #listaProduto li {
-  font-size: 1.25rem;  /* 20px */
+  width: 300px;
+  font-size: 1.25rem;
+  list-style: none; 
+  padding: 1px 1px; 
+  margin-bottom: 5px; 
+  border: 1px solid #007bff; 
+  border-radius: 5px;
+  background-color: #f8f9fa; 
+  color: #007bff; 
+  text-align: center;
+  cursor: pointer; 
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s; 
+}
+
+#labelTotal   { order: 1; margin: 8px 0; }
+
+#listaCarrinho { order: 2; }
+
+
+li:hover {
+  cursor: pointer;
 }
