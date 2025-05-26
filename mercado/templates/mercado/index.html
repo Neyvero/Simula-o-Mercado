@@ -231,30 +231,49 @@
       alert(`Compra finalizada. Total: R$ ${total.toFixed(2)}`);
       limparCarrinho();
     }
-
-    // ----- Histórico -----
+    //-----Historico
     function salvarHistorico(itens, total) {
-      const hist = JSON.parse(localStorage.getItem('historico') || '[]');
-      hist.push({ itens, total, data: new Date().toISOString() });
-      localStorage.setItem('historico', JSON.stringify(hist));
+      fetch('/api/historico/', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          itens: itens,
+          total: total
+        })
+      })
+      .then(res => {
+        if (!res.ok) throw new Error('Erro ao salvar histórico');
+        return res.json();
+      })
+      .then(() => {
+        alert(`Compra finalizada. Total: R$ ${total.toFixed(2)}`);
+      })
+      .catch(err => alert(err.message));
     }
-    //-----Puxa os dados do arquivo Historico.json
+
+    //-----Mostrar a tabela
     function mostrarHistorico() {
-  const hist = JSON.parse(localStorage.getItem('historico') || '[]');
-  if (!hist.length) return alert('Nenhuma compra registrada ainda.');
-  const ul = document.getElementById('historyList');
-  ul.innerHTML = '';
-  hist.forEach((c,i) => {
-    const li = document.createElement('li');
-    const dt = new Date(c.data).toLocaleString();
-    li.innerHTML = `<strong>Compra ${i+1} (${dt}):</strong>
-                    <ul>${c.itens.map(item => `<li>${item}</li>`).join('')}</ul>
-                    <p>Total: R$ ${c.total.toFixed(2)}</p>
-                    <hr/>`;
-    ul.appendChild(li);
-  });
-  new bootstrap.Modal(document.getElementById('historyModal')).show();
-}
+      fetch('/api/historico/')
+        .then(res => res.json())
+        .then(hist => {
+          if (!hist.length) return alert('Nenhuma compra registrada ainda.');
+          const ul = document.getElementById('historyList');
+          ul.innerHTML = '';
+          hist.forEach((c,i) => {
+            const dt = new Date(c.data_compra).toLocaleString();
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>Compra ${i+1} (${dt}):</strong>
+                            <ul>${c.itens.map(item => `<li>${item}</li>`).join('')}</ul>
+                            <p>Total: R$ ${c.total.toFixed(2)}</p>
+                            <hr/>`;
+            ul.appendChild(li);
+          });
+          new bootstrap.Modal(document.getElementById('historyModal')).show();
+        })
+        .catch(() => alert('Erro ao carregar histórico.'));
+    }
 
 
     // ----- Pesquisa via input -----

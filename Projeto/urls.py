@@ -21,3 +21,4 @@ urlpatterns = [
     path("mercado/", include("mercado.urls")),
     path('admin/', admin.site.urls),
 ]
+
