@@ -75,53 +75,53 @@
 </div>
 
   <script>
-    const li = document.createElement('li');
-    li.classList.add('sessao-texto');
-    // ----- Lista (contendo os valores-chave de cada item) -----
-    const sessao = {
-  "Hortifruti": [
-    ["Banana", 3.50],
-    ["Maçã", 4.00],
-    ["Tomate", 5.00],
-    ["Uva", 7.90]
-  ],
-  "Bebidas": [
-    ["Água", 2.00],
-    ["Cerveja", 5.50],
-    ["Suco", 4.80]
-  ],
-  "Limpeza": [
-    ["Detergente", 2.30],
-    ["Sabão em pó", 8.00],
-    ["Vassoura", 9.50]
-  ],
-  "Padaria": [
-    ["Pão francês", 0.80],
-    ["Bolo", 12.00],
-    ["Rosquinha", 3.50]
-  ],
-  "Açougue": [
-    ["Alcatra", 39.90],
-    ["Frango", 12.50]
-  ],
-  "Mercearia": [
-    ["Arroz", 25.90],
-    ["Feijão", 8.50],
-    ["Café", 12.00]
-  ],
-  "Laticínios": [
-    ["Leite", 5.40],
-    ["Queijo", 14.50]
-  ],
-  "Higiene Pessoal": [
-    ["Sabonete", 2.00],
-    ["Shampoo", 10.00]
-  ],
-  "Congelados": [
-    ["Pizza congelada", 19.90],
-    ["Sorvete", 21.00]
-  ]
-};
+      const li = document.createElement('li');
+      li.classList.add('sessao-texto');
+      // ----- Lista (contendo os valores-chave de cada item) -----
+      const sessao = {
+    "Hortifruti": [
+      ["Banana", 3.50],
+      ["Maçã", 4.00],
+      ["Tomate", 5.00],
+      ["Uva", 7.90]
+    ],
+    "Bebidas": [
+      ["Água", 2.00],
+      ["Cerveja", 5.50],
+      ["Suco", 4.80]
+    ],
+    "Limpeza": [
+      ["Detergente", 2.30],
+      ["Sabão em pó", 8.00],
+      ["Vassoura", 9.50]
+    ],
+    "Padaria": [
+      ["Pão francês", 0.80],
+      ["Bolo", 12.00],
+      ["Rosquinha", 3.50]
+    ],
+    "Açougue": [
+      ["Alcatra", 39.90],
+      ["Frango", 12.50]
+    ],
+    "Mercearia": [
+      ["Arroz", 25.90],
+      ["Feijão", 8.50],
+      ["Café", 12.00]
+    ],
+    "Laticínios": [
+      ["Leite", 5.40],
+      ["Queijo", 14.50]
+    ],
+    "Higiene Pessoal": [
+      ["Sabonete", 2.00],
+      ["Shampoo", 10.00]
+    ],
+    "Congelados": [
+      ["Pizza congelada", 19.90],
+      ["Sorvete", 21.00]
+    ]
+  };
 
 
     // ----- Estado da aplicação -----
@@ -199,7 +199,7 @@
   renderCarrinho();
   attTotal();
   salvarCarrinho();
-}
+ }
     // Essa função remove 1 item específico do carrinho
     function removerItem() {
       const ul = document.getElementById('listaCarrinho');
@@ -239,7 +239,8 @@
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          itens: itens,
+          // aqui mapeamos cada string para um objeto { descricao: ... }
+          itens: itens.map(itemTexto => ({ descricao: itemTexto })),
           total: total,
           data_compra: new Date().toISOString()
         })
@@ -249,15 +250,19 @@
         return res.json();
       })
       .then(() => {
-        alert(`Compra finalizada. Total: R$ ${total.toFixed(2)}`);
+        alert(`Compra armazenada com sucesso. Total: R$ ${total.toFixed(2)}`);
       })
-      .catch(err => alert(err.message));
+      .catch(err => {
+        console.error('Erro ao salvar histórico:', err);
+        alert('Erro ao salvar histórico. Veja o console para detalhes.');
+      });
     }
-    //-----Puxa os dados do arquivo Historico.json
+
+    // ----- Mostra o Historico ao clicar no butão -----
     function mostrarHistorico() {
       fetch('/api/historico/')
         .then(res => {
-          if (!res.ok) throw new Error(`HTTP error! status: ${res.status} - ${res.statusText}`);
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
           return res.json();
         })
         .then(hist => {
@@ -269,11 +274,15 @@
           ul.innerHTML = '';
           hist.forEach((c, i) => {
             const dt = new Date(c.data_compra).toLocaleString();
-            const li = document.createElement('li'); // corrigido: const aqui
-            li.innerHTML = `<strong>Compra ${i + 1} (${dt}):</strong>
-                            <ul>${c.itens.map(item => `<li>${item}</li>`).join('')}</ul>
-                            <p>Total: R$ ${Number(c.total).toFixed(2)}</p>
-                            <hr/>`;
+            const li = document.createElement('li');
+            li.innerHTML = `
+              <strong>Compra ${i+1} (${dt}):</strong>
+              <ul>
+                ${c.itens.map(item => `<li>${item.descricao}</li>`).join('')}
+              </ul>
+              <p>Total: R$ ${Number(c.total).toFixed(2)}</p>
+              <hr/>
+            `;
             ul.appendChild(li);
           });
           new bootstrap.Modal(document.getElementById('historyModal')).show();
@@ -283,9 +292,6 @@
           alert('Erro ao carregar histórico. Veja o console para detalhes.');
         });
     }
-
-
-
 
     // ----- Pesquisa via input -----
     function buscar() {

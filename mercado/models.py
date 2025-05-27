@@ -1,9 +1,20 @@
 from django.db import models
 
 class HistoricoCompra(models.Model):
-    itens = models.JSONField()  # guarda a lista de itens da compra como JSON
-    total = models.DecimalField(max_digits=10, decimal_places=2)
-    data_compra = models.DateTimeField()  # data da compra vinda do frontend
+    total = models.DecimalField(max_digits=10, decimal_places=2) # soma da compra
+    data_compra = models.DateTimeField() # data da compra
 
     def __str__(self):
-        return f"Compra em {self.data_compra} - Total: R$ {self.total}"
+        return f"Compra em {self.data_compra} - Total: R$ {self.total}" # retorna para o usuário
+
+#integração para o banco de dados
+class ItemCompra(models.Model):
+    historico = models.ForeignKey(
+        HistoricoCompra,
+        related_name='itens',    
+        on_delete=models.CASCADE
+    )
+    descricao = models.CharField(max_length=200)
+
+    def __str__(self):
+        return f"{self.descricao} (Compra #{self.historico_id})"

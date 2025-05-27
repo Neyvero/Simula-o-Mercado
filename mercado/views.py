@@ -9,8 +9,6 @@ from django.views.generic import TemplateView
 from rest_framework import viewsets
 from .models import HistoricoCompra
 from .serializers import HistoricoCompraSerializer
-from .models import HistoricoCompra
-
 
 class IndexView(TemplateView):
     template_name = "mercado/index.html"
