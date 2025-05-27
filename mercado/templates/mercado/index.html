@@ -231,16 +231,17 @@
       alert(`Compra finalizada. Total: R$ ${total.toFixed(2)}`);
       limparCarrinho();
     }
-    //-----Historico
+// ----- Histórico -----
     function salvarHistorico(itens, total) {
-      fetch('/api/historico/', {
+      fetch('http://127.0.0.1:8000/api/historico/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
           itens: itens,
-          total: total
+          total: total,
+          data_compra: new Date().toISOString()
         })
       })
       .then(res => {
@@ -252,28 +253,38 @@
       })
       .catch(err => alert(err.message));
     }
-
-    //-----Mostrar a tabela
+    //-----Puxa os dados do arquivo Historico.json
     function mostrarHistorico() {
       fetch('/api/historico/')
-        .then(res => res.json())
+        .then(res => {
+          if (!res.ok) throw new Error(`HTTP error! status: ${res.status} - ${res.statusText}`);
+          return res.json();
+        })
         .then(hist => {
-          if (!hist.length) return alert('Nenhuma compra registrada ainda.');
+          if (!hist.length) {
+            alert('Nenhuma compra registrada ainda.');
+            return;
+          }
           const ul = document.getElementById('historyList');
           ul.innerHTML = '';
-          hist.forEach((c,i) => {
+          hist.forEach((c, i) => {
             const dt = new Date(c.data_compra).toLocaleString();
-            const li = document.createElement('li');
-            li.innerHTML = `<strong>Compra ${i+1} (${dt}):</strong>
+            const li = document.createElement('li'); // corrigido: const aqui
+            li.innerHTML = `<strong>Compra ${i + 1} (${dt}):</strong>
                             <ul>${c.itens.map(item => `<li>${item}</li>`).join('')}</ul>
-                            <p>Total: R$ ${c.total.toFixed(2)}</p>
+                            <p>Total: R$ ${Number(c.total).toFixed(2)}</p>
                             <hr/>`;
             ul.appendChild(li);
           });
           new bootstrap.Modal(document.getElementById('historyModal')).show();
         })
-        .catch(() => alert('Erro ao carregar histórico.'));
+        .catch(err => {
+          console.error('Erro ao carregar histórico:', err);
+          alert('Erro ao carregar histórico. Veja o console para detalhes.');
+        });
     }
+
+
 
 
     // ----- Pesquisa via input -----

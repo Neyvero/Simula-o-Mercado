@@ -6,6 +6,10 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from django.views.generic import TemplateView
+from rest_framework import viewsets
+from .models import HistoricoCompra
+from .serializers import HistoricoCompraSerializer
+from .models import HistoricoCompra
 
 
 class IndexView(TemplateView):
@@ -18,3 +22,8 @@ def index(request):
 
 def index(request):
     return render(request, "mercado/index.html")
+
+
+class HistoricoCompraViewSet(viewsets.ModelViewSet):
+    queryset = HistoricoCompra.objects.all().order_by('-data_compra')
+    serializer_class = HistoricoCompraSerializer
