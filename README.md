@@ -3,6 +3,8 @@
 
 ## Descrição do projeto
 
+<img src="./examplo.jpg"/>
+
 Este código utiliza conceitos de estruturas de dados para realizar uma simulação de mercado, com funções de carrinhos e compras automatizadas, incluindo histórico do carrinho realizada por busca binária e utilizando conceitos como FIFO e LIFO.
 
 O projeto conta com módulos como CustomTkinter, JSON, os, e messagebox.
