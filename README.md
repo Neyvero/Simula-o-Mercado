@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Simula-Mercado-Digital
 
@@ -106,3 +107,7 @@ CREATE DATABASE test_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 | Ícaro                   |
 | Yuri                    | 
 | Davi                    |
+=======
+# Site-Django-Mercado
+Este é um site destinado a criação de um sistema de compras online, que simula um mercado digital.
+>>>>>>> 82d3289c (Initial commit)
