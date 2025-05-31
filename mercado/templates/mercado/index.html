@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   <script src="{% static 'mercado/mobile-navebar.js' %}" defer></script>
   {% load bootstrap5 %}
   {% bootstrap_css %}
   {% bootstrap_javascript %}
@@ -17,351 +18,31 @@
 </head>
 
 <body>
-<div class="titulo">
-  <h2 class="fs-1" class="fw-bolder" >Mercado Digital</h2>
-</div>
-  <!-- Busca de produto -->
-  <input type="text" id="entryProduto" placeholder="Buscar produto..." />
-  <button id="btnBuscar" class="btn btn-primary">Buscar</button>
-  <textarea id="textResult" rows="1" cols="50" readonly></textarea>
+  <header>
+  <nav>
+  <a class="logo" href="/mercado">Mercado Digital</a>
+  <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
 
-  <div id="container">
-    <!-- Sessões / Produtos -->
-    <div>
-      <br>
-      <br>
-      <h2 class="fs-2 fw-bolder sessao.titulo">Sessões</h2>
-      <select id="selectSessao"></select>
-      <br>
-      <br>
-      <ul id="listaProduto"></ul>
-    </div>
+  <ul class="nav-list">
+    <!-- Busca de produto -->
+    <li><a href="/mercado">Ínicio</a></li>
+    <li><a href="{% url 'mercado:hortifruti' %}">Hortifruti</a></li>
+    <li><a href="{% url 'mercado:bebidas' %}">Bebidas</a></li>
+    <li><a href="{% url 'mercado:limpeza' %}">Limpeza</a></li>
+    <li><a href="{% url 'mercado:padaria' %}">Padaria</a></li>
+    <li><a href="{% url 'mercado:acougue' %}">Açougue</a></li>
+    <li><a href="{% url 'mercado:mercearia' %}">Mercearia</a></li>
+    <li><a href="{% url 'mercado:laticinios' %}">Laticínios</a></li>
+    <li><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></li>
+  </ul>
+  </nav>
+</header>
 
-    <div id="carr">
-    <div class="carr-buttons">
-      <button id="btnAdd" class="btn btn-primary">Adicionar</button>
-      <button id="btnRemover" class="btn btn-primary">Remover</button>
-      <button id="btnLimpar" class="btn btn-primary">Limpar tudo</button>
-      <button id="btnFinalizar" class="btn btn-primary">Finalizar compra</button>
-      <button id="btnHistorico" class="btn btn-primary">Ver histórico</button>
-    </div>
-
-    <div class="carrinho">
-      <h2 class="fs-2 fw-bolder carrinho.titulo">Carrinho</h2>
-      <ul id="listaCarrinho"></ul>
-      <p id="labelTotal">Total: R$ 0.00</p>
-    </div>
-  </div>
-</div>
-
-<div id="historyModal" class="modal fade" tabindex="-1">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title">Histórico de Compras</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-      </div>
-      <div class="modal-body" style="max-height:60vh; overflow-y:auto;">
-        <ul id="historyList" class="list-unstyled"></ul>
-      </div>
-    </div>
-  </div>
-</div>  
-
-
-<div id="historyPanel" class="d-none p-3 border">
-  <h3>Histórico de Compras</h3>
-  <ul id="historyList"></ul>
-</div>
-
-  <script>
-      const li = document.createElement('li');
-      li.classList.add('sessao-texto');
-      // ----- Lista (contendo os valores-chave de cada item) -----
-      const sessao = {
-    "Hortifruti": [
-      ["Banana", 3.50],
-      ["Maçã", 4.00],
-      ["Tomate", 5.00],
-      ["Uva", 7.90]
-    ],
-    "Bebidas": [
-      ["Água", 2.00],
-      ["Cerveja", 5.50],
-      ["Suco", 4.80]
-    ],
-    "Limpeza": [
-      ["Detergente", 2.30],
-      ["Sabão em pó", 8.00],
-      ["Vassoura", 9.50]
-    ],
-    "Padaria": [
-      ["Pão francês", 0.80],
-      ["Bolo", 12.00],
-      ["Rosquinha", 3.50]
-    ],
-    "Açougue": [
-      ["Alcatra", 39.90],
-      ["Frango", 12.50]
-    ],
-    "Mercearia": [
-      ["Arroz", 25.90],
-      ["Feijão", 8.50],
-      ["Café", 12.00]
-    ],
-    "Laticínios": [
-      ["Leite", 5.40],
-      ["Queijo", 14.50]
-    ],
-    "Higiene Pessoal": [
-      ["Sabonete", 2.00],
-      ["Shampoo", 10.00]
-    ],
-    "Congelados": [
-      ["Pizza congelada", 19.90],
-      ["Sorvete", 21.00]
-    ]
-  };
-
-
-    // ----- Estado da aplicação -----
-    let carrinho = [];
-
-    // ----- Função de Busca Binária -----
-    function buscaProduto(lista, produto) {
-      let esquerda = 0, direita = lista.length - 1;
-      produto = produto.toLowerCase();
-      while (esquerda <= direita) {
-        const meio = Math.floor((esquerda + direita) / 2);
-        const nome = lista[meio][0].toLowerCase();
-        if (nome === produto) {
-          return lista[meio];
-        } else if (nome < produto) {
-          esquerda = meio + 1;
-        } else {
-          direita = meio - 1;
-        }
-      }
-      return null;
-    }
-
-    // ----- Atualizar lista de produtos quando muda de sessão -----
-    function attProduto(nomeSessao) {
-  const ul = document.getElementById('listaProduto');
-  ul.innerHTML = '';
-  sessao[nomeSessao].forEach(([nome, preco]) => {
-    const li = document.createElement('li');
-    li.textContent = `${nome} - R$ ${preco.toFixed(2)}`;
-    ul.appendChild(li);
-  });
-
-  // Reaplica a seleção clicável sempre que a lista mudar
-  attachSelectable(ul);
-}
-
-    // ----- Adição do preço total do carrinho -----
-    function attTotal() {
-      const total = carrinho
-        .map(item => parseFloat(item.split('R$')[1]))
-        .reduce((a, b) => a + b, 0);
-      document.getElementById('labelTotal').textContent =
-        `Total: R$ ${total.toFixed(2)}`;
-    }
-    //-------Salvar os itens dentro do carrinho no Histórico Local-----
-    function salvarCarrinho() {
-      localStorage.setItem('carrinho', JSON.stringify(carrinho));
-    }
-
-    //--------Carrega os itens para o arquivo Json
-    function carregarCarrinho() {
-      const dados = JSON.parse(localStorage.getItem('carrinho') || '[]');
-      carrinho = dados;
-      const ul = document.getElementById('listaCarrinho');
-      ul.innerHTML = '';
-      carrinho.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        ul.appendChild(li);
-      });
-      attTotal();
-    }
-    //--------Adiciona itens no carrinho
-    function addCarrinho() {
-  const ulProdutos = document.getElementById('listaProduto');
-  const liSel = ulProdutos.querySelector('li.selected');
-  if (!liSel) {
-    return alert('Selecione um produto antes de adicionar.');
-  }
-
-  // Puxa o texto completo do <li>, já no formato "Nome - R$ XX.XX"
-  const itemTexto = liSel.textContent;
-  carrinho.push(itemTexto);
-  renderCarrinho();
-  attTotal();
-  salvarCarrinho();
- }
-    // Essa função remove 1 item específico do carrinho
-    function removerItem() {
-      const ul = document.getElementById('listaCarrinho');
-      const li = ul.querySelector('li.selected');
-      if (!li) return alert('Selecione um item no carrinho.');
-      const idx = carrinho.indexOf(li.textContent);
-      carrinho.splice(idx, 1);
-      renderCarrinho();
-      attTotal();
-      salvarCarrinho();
-    }
-    //--------Aqui remove todos os elementos do carrinho
-    function limparCarrinho() {
-      if (!confirm('Limpar todo o carrinho?')) return;
-      carrinho = [];
-      renderCarrinho();
-      attTotal();
-      salvarCarrinho();
-    }
-    //-----Função para finalizar a compra, enviando os dados da compra pro histórico
-    function finalizarCompra() {
-      if (carrinho.length === 0) {
-        return alert('O carrinho está vazio!');
-      }
-      const total = carrinho
-        .map(item => parseFloat(item.split('R$')[1]))
-        .reduce((a, b) => a + b, 0);
-      salvarHistorico([...carrinho], total);
-      alert(`Compra finalizada. Total: R$ ${total.toFixed(2)}`);
-      limparCarrinho();
-    }
-// ----- Histórico -----
-    function salvarHistorico(itens, total) {
-      fetch('http://127.0.0.1:8000/api/historico/', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          // aqui mapeamos cada string para um objeto { descricao: ... }
-          itens: itens.map(itemTexto => ({ descricao: itemTexto })),
-          total: total,
-          data_compra: new Date().toISOString()
-        })
-      })
-      .then(res => {
-        if (!res.ok) throw new Error('Erro ao salvar histórico');
-        return res.json();
-      })
-      .then(() => {
-        alert(`Compra armazenada com sucesso. Total: R$ ${total.toFixed(2)}`);
-      })
-      .catch(err => {
-        console.error('Erro ao salvar histórico:', err);
-        alert('Erro ao salvar histórico. Veja o console para detalhes.');
-      });
-    }
-
-    // ----- Mostra o Historico ao clicar no butão -----
-    function mostrarHistorico() {
-      fetch('/api/historico/')
-        .then(res => {
-          if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-          return res.json();
-        })
-        .then(hist => {
-          if (!hist.length) {
-            alert('Nenhuma compra registrada ainda.');
-            return;
-          }
-          const ul = document.getElementById('historyList');
-          ul.innerHTML = '';
-          hist.forEach((c, i) => {
-            const dt = new Date(c.data_compra).toLocaleString();
-            const li = document.createElement('li');
-            li.innerHTML = `
-              <strong>Compra ${i+1} (${dt}):</strong>
-              <ul>
-                ${c.itens.map(item => `<li>${item.descricao}</li>`).join('')}
-              </ul>
-              <p>Total: R$ ${Number(c.total).toFixed(2)}</p>
-              <hr/>
-            `;
-            ul.appendChild(li);
-          });
-          new bootstrap.Modal(document.getElementById('historyModal')).show();
-        })
-        .catch(err => {
-          console.error('Erro ao carregar histórico:', err);
-          alert('Erro ao carregar histórico. Veja o console para detalhes.');
-        });
-    }
-
-    // ----- Pesquisa via input -----
-    function buscar() {
-      const produto = document.getElementById('entryProduto').value.trim();
-      const result = document.getElementById('textResult');
-      result.value = '';
-      if (!produto) return;
-      for (const nomeSessao in sessao) {
-        const encontrado = buscaProduto(sessao[nomeSessao], produto);
-        if (encontrado) {
-          result.value +=
-            `Produto: ${encontrado[0]}, R$ ${encontrado[1].toFixed(2)}, Sessão: ${nomeSessao}\n`;
-          break;
-        }
-      }
-      if (!result.value) {
-        result.value = 'Produto não encontrado.';
-      }
-      document.getElementById('entryProduto').value = '';
-    }
-
-    // ----- Render helpers e eventos -----
-    function renderSessaoOptions() {
-      const sel = document.getElementById('selectSessao');
-      Object.keys(sessao).forEach(nome => {
-        const opt = document.createElement('option');
-        opt.value = nome; opt.textContent = nome;
-        sel.appendChild(opt);
-      });
-    }
-    //Para mostrar os elementos do carrinho na tela
-    function renderCarrinho() {
-      const ul = document.getElementById('listaCarrinho');
-      ul.innerHTML = '';
-      carrinho.forEach(item => {
-        const li = document.createElement('li');
-        li.textContent = item;
-        ul.appendChild(li);
-      });
-      attachSelectable(ul);
-    }
-
-    function attachSelectable(parent) {
-      parent.querySelectorAll('li').forEach(li => {
-        li.addEventListener('click', () => {
-          parent.querySelectorAll('li').forEach(x => x.classList.remove('selected'));
-          li.classList.add('selected');
-        });
-      });
-    }
-
-    // ---- Inicialização ----
-    window.addEventListener('DOMContentLoaded', () => {
-      renderSessaoOptions();
-      attProduto(Object.keys(sessao)[0]);
-      carregarCarrinho();
-
-      document.getElementById('selectSessao')
-        .addEventListener('change', e => attProduto(e.target.value));
-
-      attachSelectable(document.getElementById('listaProduto'));
-      attachSelectable(document.getElementById('listaCarrinho'));
-
-      document.getElementById('btnBuscar').addEventListener('click', buscar);
-      document.getElementById('btnAdd').addEventListener('click', addCarrinho);
-      document.getElementById('btnRemover').addEventListener('click', removerItem);
-      document.getElementById('btnLimpar').addEventListener('click', limparCarrinho);
-      document.getElementById('btnFinalizar').addEventListener('click', finalizarCompra);
-      document.getElementById('btnHistorico').addEventListener('click', mostrarHistorico);
-    });
-  </script>
+<main class="hero"></main>
+  
 </body>
 </html>
