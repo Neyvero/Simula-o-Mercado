@@ -4,12 +4,14 @@ from django.http import Http404
 from django.db.models import F
 from django.urls import reverse
 from django.views import generic
-from django.utils import timezone
+from django.utils.timezone import now
 from django.views.generic import TemplateView
-from rest_framework import viewsets
-from .models import HistoricoCompra
-from .serializers import HistoricoCompraSerializer
-
+from .models import HistoricoCompra, Carrinho, ItemCompra, ItemCarrinho
+from .serializers import HistoricoCompraSerializer, ItemCarrinhoSerializer, CarrinhoSerializer 
+from rest_framework import viewsets, status 
+from rest_framework.response import Response
+from rest_framework.decorators import action
+from rest_framework.permissions import AllowAny
 
 class IndexView(TemplateView):
     template_name = "mercado/index.html"
@@ -58,3 +60,68 @@ def padaria(request):
 class HistoricoCompraViewSet(viewsets.ModelViewSet):
     queryset = HistoricoCompra.objects.all().order_by('-data_compra')
     serializer_class = HistoricoCompraSerializer
+
+class CarrinhoViewSet(viewsets.ModelViewSet):
+    serializer_class = CarrinhoSerializer
+    permission_classes = [AllowAny]
+
+    def get_queryset(self):
+        user = self.request.user
+        if user.is_authenticated:
+            return Carrinho.objects.filter(usuario=user)
+        else:
+            return Carrinho.objects.none()
+
+    def list(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+
+        carrinho, _ = Carrinho.objects.get_or_create(usuario=user)
+        serializer = CarrinhoSerializer(carrinho)
+        return Response(serializer.data)
+
+    def create(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+
+        carrinho, _ = Carrinho.objects.get_or_create(usuario=user)
+        serializer = ItemCarrinhoSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(carrinho=carrinho)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @action(detail=False, methods=['post'])
+    def finalizar(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+
+        carrinho = get_object_or_404(Carrinho, usuario=user)
+        itens = carrinho.itens.all()
+
+        if not itens:
+            return Response({'erro': 'Carrinho vazio.'}, status=status.HTTP_400_BAD_REQUEST)
+
+        total = sum(item.quantidade * item.preco_unitario for item in itens)
+        historico = HistoricoCompra.objects.create(total=total, data_compra=now())
+
+        for item in itens:
+            ItemCompra.objects.create(historico=historico, descricao=item.descricao)
+
+        itens.delete()  # limpa o carrinho
+
+        return Response(HistoricoCompraSerializer(historico).data)
+
+    @action(detail=True, methods=['delete'])
+    def remover_item(self, request, pk=None):
+        user = request.user
+        if not user.is_authenticated:
+            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+
+        item = get_object_or_404(ItemCarrinho, pk=pk, carrinho__usuario=user)
+        item.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+

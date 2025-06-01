@@ -43,6 +43,16 @@ INSTALLED_APPS = [
     'users'
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+        'rest_framework.authentication.BasicAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
+    ]
+}
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -55,7 +65,6 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'Projeto.urls'
 
-# templates
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -71,8 +80,7 @@ TEMPLATES = [
     },
 ]
 
-
-WSGI_APPLICATION = 'Projeto.wsgi.application' 
+WSGI_APPLICATION = 'Projeto.wsgi.application'
 
 
 # Database
@@ -82,8 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'test_db',
-        'USER':'root',
-        'PASSWORD':'!Junio2408',
+        'USER':'django',
+        'PASSWORD':'senha123',
         'HOST':'127.0.0.1',
         'PORT':'3306',
     }

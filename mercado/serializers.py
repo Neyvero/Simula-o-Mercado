@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import HistoricoCompra, ItemCompra
+from .models import ItemCarrinho, Carrinho
 
 class ItemCompraSerializer(serializers.ModelSerializer):
     class Meta:
@@ -22,3 +23,15 @@ class HistoricoCompraSerializer(serializers.ModelSerializer):
                 descricao=item_dict['descricao']
             )
         return historico
+    
+class ItemCarrinhoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ItemCarrinho
+        fields = ['id', 'descricao', 'quantidade', 'preco_unitario']
+
+class CarrinhoSerializer(serializers.ModelSerializer):
+    itens = ItemCarrinhoSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Carrinho
+        fields = ['id', 'usuario', 'criado_em', 'atualizado_em', 'itens']
