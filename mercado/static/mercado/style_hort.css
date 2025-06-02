@@ -36,7 +36,7 @@ nav {
   right: 0;
   height: 8vh;
   background: #23232e;
-  z-index: 9999;
+  z-index: 2;
   display: flex;
   justify-content: space-between; /* deixa logo e hamburger nas extremidades */
   align-items: center;
@@ -47,15 +47,9 @@ nav {
 
 /* MAIN */
 main {
-  background-color: rgb(169, 139, 104);
-  background-size: cover;
-  height: 92vh;
-  font-family: 'Hepta Slab', Helvetica, Arial;
-  padding: 20px;
-  overflow-y: auto;
-  margin-top: 8vh;           /* Evita conteúdo escondido atrás da nav */
-  position: relative;
-  z-index: 1;
+    flex:1;
+    padding:20px;
+    margin-top:60px;
 }
 .titulo-sessao{
     text-align: center;
@@ -217,17 +211,17 @@ main {
 
 /* PRODUTO MODAL & CARRINHO */
 .produtoWindowArea {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    background-color: rgba(255,255,255,0.5);
-    display: none;
-    transition: all ease 0.5s;
+    position:fixed;
+    left:0;
+    top:0;
+    bottom:0;
+    right:0;
+    background-color:rgba(255, 255, 255, 0.5);
+    display:none;
+    transition: all ease .5s;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
+    overflow-y:auto;
 }
 .produtoWindowBody {
     width: 900px;
@@ -245,7 +239,7 @@ main {
 }
 .produtoBig img {
     height: 400px;
-    width: auto;
+    width: 400px;
 }
 .produtoInfo {
     flex: 1;

@@ -29,9 +29,9 @@ nav {
 }
 
 main {
-  background-color: rgb(169, 139, 104);
-  background-size: cover;
-  height: 92vh;
+    flex:1;
+    padding:20px;
+    margin-top:60px;
 }
 
 .nav-list {
