@@ -77,4 +77,7 @@ INFO 2025-06-03 19:19:19,379 autoreload C:\Users\neyve\OneDrive\Área de Trabalho
 [DEBUG] 2025-06-03 19:23:53,262 django.db.backends: (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
 [DEBUG] 2025-06-03 19:23:53,266 django.db.backends: (0.000) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`usuario_id`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em`, `mercado_carrinho`.`teste_temp` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`usuario_id` = 1 LIMIT 21; args=(1,); alias=default
 [DEBUG] 2025-06-03 19:23:53,268 django.db.backends: (0.000) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 1; args=(1,); alias=default
+<<<<<<< HEAD
 [INFO] 2025-06-03 19:25:54,400 django.utils.autoreload: C:\Users\neyve\OneDrive\Área de Trabalho\Vscode\Python\Backup do projeto final\mercado\urls.py changed, reloading.
+=======
+>>>>>>> dd5d133e (Adicionando o logs)

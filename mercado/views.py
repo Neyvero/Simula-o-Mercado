@@ -12,6 +12,24 @@ from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
+from django.http import JsonResponse
+import logging
+import asyncio
+
+logger = logging.getLogger(__name__)
+
+
+async def teste_view(request):
+    logger.debug("Debug log ativado")
+    logger.info("Info log ativado")
+    logger.warning("Warning log ativado")
+    logger.error("Error log ativado")
+    logger.critical("Critical log ativado")
+
+    # Simula processo assíncrono com delay de 2 segundos
+    await asyncio.sleep(2)
+
+    return JsonResponse({'status': 'ok', 'mensagem': 'Teste de async e logs executado com sucesso!'})
 
 
 class IndexView(TemplateView):
@@ -119,7 +137,7 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
 
         return Response(HistoricoCompraSerializer(historico).data)
 
-    @action(detail=True, methods=['patch']) 
+    @action(detail=True, methods=['patch'])
     def atualizar_quantidade(self, request, pk=None):
         user = request.user
         if not user.is_authenticated:
@@ -139,7 +157,7 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
         item.quantidade = nova_qt
         item.save()
         return Response(ItemCarrinhoSerializer(item).data)
-    
+
     @action(detail=False, methods=['delete'])
     def limpar(self, request):
         user = request.user
