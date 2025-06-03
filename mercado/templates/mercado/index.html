@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static 'mercado/style.css' %}">
+<script src="{% static 'mercado/mobile-navebar.js' %}" defer></script>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercado Digital</title>
+</head>
+<body>
+
+<header>
+  <div class="logo">Mercado Digital</div>
+  <nav>
+    <ul>
+      <!-- Busca de produto -->
+=======
 <!--Inica o css estático, carrega o Bootstrap, e define o tipo de arquivo HTML-->
 
 {% load static %}
@@ -29,6 +52,7 @@
 
   <ul class="nav-list">
     <!-- Busca de produto -->
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51
     <li><a href="/mercado">Ínicio</a></li>
     <li><a href="{% url 'mercado:hortifruti' %}">Hortifruti</a></li>
     <li><a href="{% url 'mercado:bebidas' %}">Bebidas</a></li>
@@ -38,6 +62,91 @@
     <li><a href="{% url 'mercado:mercearia' %}">Mercearia</a></li>
     <li><a href="{% url 'mercado:laticinios' %}">Laticínios</a></li>
     <li><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></li>
+<<<<<<< HEAD
+    </ul>
+  </nav>
+  <div class="btns">
+    <button class="btn-secondary">Entrar</button>
+    <button class="btn-primary">Comprar Agora</button>
+    <button class="btn-cart" aria-label="Carrinho">
+      🛒 <span class="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Mercado Digital</h1>
+  <h2>Sua Compra Online,<br />Rápida e Segura</h2>
+  <p>Compre produtos frescos, bebidas, e tudo para sua casa com facilidade.<br />Entrega rápida e preços imbatíveis.</p>
+  <div class="btn-container">
+    <button class="btn-primary">Comprar Agora</button>
+    <input type="text" placeholder="Procure seu produto..." />
+  </div>
+  <div class="stats">
+    <div class="stat">
+      <h3>10k+</h3>
+      <p>Clientes Satisfeitos</p>
+    </div>
+    <div class="stat">
+      <h3>24h</h3>
+      <p>Entrega Rápida</p>
+    </div>
+    <div class="stat">
+      <h3>100%</h3>
+      <p>Produtos Frescos</p>
+    </div>
+    <div class="stat">
+      <h3>5★</h3>
+      <p>Avaliação Média</p>
+    </div>
+  </div>
+</section>
+
+<section class="categories">
+  <h2>Nossas <span style="color:#0047e8;">Categorias</span></h2>
+  <p>Encontre tudo o que você precisa em nossas categorias organizadas</p>
+  <div class="category-grid">
+    <div class="category-card">
+      <div class="category-icon">🥕</div>
+      <div class="category-title"><a href="{% url 'mercado:hortifruti' %}">Hortifruti</a></div>
+      <div class="category-desc">Frutas e verduras frescas</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🥤</div>
+      <div class="category-title"><a href="{% url 'mercado:bebidas' %}">Bebidas</a></div>
+      <div class="category-desc">Refrigerantes, sucos e águas</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🍞</div>
+      <div class="category-title"><a href="{% url 'mercado:padaria' %}">Padaria</a></div>
+      <div class="category-desc">Pães frescos e bolos</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🧽</div>
+      <div class="category-title"><a href="{% url 'mercado:limpeza' %}">Limpeza</a></div>
+      <div class="category-desc">Produtos de limpeza</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🥩</div>
+      <div class="category-title"><a href="{% url 'mercado:acougue' %}">Açougue</a></div>
+      <div class="category-desc">Carnes frescas e selecionadas</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🛒</div>
+      <div class="category-title"><a href="{% url 'mercado:mercearia' %}">Mercearia</a></div>
+      <div class="category-desc">Produtos básicos e essenciais</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🥛</div>
+      <div class="category-title"><a href="{% url 'mercado:laticinios' %}">Laticínios</a></div>
+      <div class="category-desc">Leite, queijos e iogurtes</div>
+    </div>
+    <div class="category-card">
+      <div class="category-icon">🧴</div>
+      <div class="category-title"><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></div>
+      <div class="category-desc">Produtos de cuidado pessoal</div>
+   
+=======
   </ul>
   </nav>
 </header>
@@ -46,3 +155,4 @@
   
 </body>
 </html>
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51

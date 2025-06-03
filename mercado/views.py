@@ -7,11 +7,12 @@ from django.views import generic
 from django.utils.timezone import now
 from django.views.generic import TemplateView
 from .models import HistoricoCompra, Carrinho, ItemCompra, ItemCarrinho
-from .serializers import HistoricoCompraSerializer, ItemCarrinhoSerializer, CarrinhoSerializer 
-from rest_framework import viewsets, status 
+from .serializers import HistoricoCompraSerializer, ItemCarrinhoSerializer, CarrinhoSerializer
+from rest_framework import viewsets, status
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework.permissions import AllowAny
+
 
 class IndexView(TemplateView):
     template_name = "mercado/index.html"
@@ -61,6 +62,7 @@ class HistoricoCompraViewSet(viewsets.ModelViewSet):
     queryset = HistoricoCompra.objects.all().order_by('-data_compra')
     serializer_class = HistoricoCompraSerializer
 
+
 class CarrinhoViewSet(viewsets.ModelViewSet):
     serializer_class = CarrinhoSerializer
     permission_classes = [AllowAny]
@@ -106,10 +108,12 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
             return Response({'erro': 'Carrinho vazio.'}, status=status.HTTP_400_BAD_REQUEST)
 
         total = sum(item.quantidade * item.preco_unitario for item in itens)
-        historico = HistoricoCompra.objects.create(total=total, data_compra=now())
+        historico = HistoricoCompra.objects.create(
+            total=total, data_compra=now())
 
         for item in itens:
-            ItemCompra.objects.create(historico=historico, descricao=item.descricao)
+            ItemCompra.objects.create(
+                historico=historico, descricao=item.descricao)
 
         itens.delete()  # limpa o carrinho
 
@@ -124,4 +128,3 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
         item = get_object_or_404(ItemCarrinho, pk=pk, carrinho__usuario=user)
         item.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-
