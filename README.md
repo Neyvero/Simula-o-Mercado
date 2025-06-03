@@ -3,8 +3,14 @@
 # Simula-Mercado-Digital
 
 ## Descrição do projeto
-
-<img src="./examplo.jpg"/>
+Este é a evolução do projeto ao decorrer do desenvolvimento dele:
+A primeira Imagem é refente ao código, quando utilizarmos a interface visual do Tkinter para representarmos os dados do projeto
+<img src="./exemplo1.jpg"/>
+O projeto, teve uma mudança gráfica, pois começamos a utilizar o framework Django, então tivemos que fazer mudanças no arquivo interno e na aparência do site, indo para uma abordagem gameficada.
+<img src="./examplo2.jpg"/>
+Agora o site está em sua versão final, com um design mais moderno e com sua funcionalidades novas, concluindo o objetivo do site.
+<img src="./exemplo3.jpg"/>
+<img src="./exemplo4.jpg"/>
 
 Este código utiliza conceitos de estruturas de dados para realizar uma simulação de mercado, com funções de carrinhos e compras automatizadas, incluindo histórico do carrinho realizada por busca binária e utilizando conceitos como FIFO e LIFO.
 
