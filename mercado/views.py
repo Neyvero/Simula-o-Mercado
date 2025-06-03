@@ -119,12 +119,35 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
 
         return Response(HistoricoCompraSerializer(historico).data)
 
-    @action(detail=True, methods=['delete'])
-    def remover_item(self, request, pk=None):
+    @action(detail=True, methods=['patch']) 
+    def atualizar_quantidade(self, request, pk=None):
         user = request.user
         if not user.is_authenticated:
             return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
 
         item = get_object_or_404(ItemCarrinho, pk=pk, carrinho__usuario=user)
-        item.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        nova_qt = request.data.get("quantidade")
+
+        if nova_qt is None:
+            return Response({"erro": "Quantidade inválida"}, status=status.HTTP_400_BAD_REQUEST)
+
+        nova_qt = int(nova_qt)
+        if nova_qt < 1:
+            item.delete()
+            return Response(status=status.HTTP_204_NO_CONTENT)
+
+        item.quantidade = nova_qt
+        item.save()
+        return Response(ItemCarrinhoSerializer(item).data)
+    
+    @action(detail=False, methods=['delete'])
+    def limpar(self, request):
+        user = request.user
+        if not user.is_authenticated:
+            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+
+        carrinho = Carrinho.objects.filter(usuario=user).first()
+        if carrinho:
+            carrinho.itens.all().delete()
+            return Response({"mensagem": "Carrinho limpo com sucesso."}, status=status.HTTP_204_NO_CONTENT)
+        return Response({"erro": "Carrinho não encontrado."}, status=status.HTTP_404_NOT_FOUND)

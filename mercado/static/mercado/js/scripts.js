@@ -1,112 +1,109 @@
-let modalKey = 0
+document.addEventListener("DOMContentLoaded", () => {
+  const seleciona = (elemento) => document.querySelector(elemento);
+  const selecionaTodos = (elemento) => document.querySelectorAll(elemento);
 
-// variavel para controlar a quantidade inicial de produtos na modal
-let quantProdutos = 1
+  const formatoReal = (valor) => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+  const formatoMonetario = (valor) => valor ? valor.toFixed(2) : '0.00';
 
-let cart = [] // carrinho
-
-const seleciona = (elemento) => document.querySelector(elemento)
-const selecionaTodos = (elemento) => document.querySelectorAll(elemento)
-
-const formatoReal = (valor) => {
-    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
-}
-
-const formatoMonetario = (valor) => {
-    if(valor) {
-        return valor.toFixed(2)
+  const abrirModal = () => {
+    const modal = seleciona('.produtoWindowArea');
+    if (modal) {
+      modal.style.opacity = 0;
+      modal.style.display = 'flex';
+      setTimeout(() => modal.style.opacity = 1, 150);
     }
-}
+  };
 
-const abrirModal = () => {
-    seleciona('.produtoWindowArea').style.opacity = 0
-    seleciona('.produtoWindowArea').style.display = 'flex'
-    setTimeout(() => {
-        seleciona('.produtoWindowArea').style.opacity = 1
-    }, 150)
-}
+  window.fecharModal = function () {
+    const modal = document.querySelector('.produtoWindowArea');
+    if (modal) {
+      modal.style.opacity = 0;
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 500);
+    }
+  };
 
-const fecharModal = () => {
-    seleciona('.produtoWindowArea').style.opacity = 0 // transparente
-    setTimeout(() => seleciona('.produtoWindowArea').style.display = 'none', 500)
-}
+  const botoesFechar = () => {
+    selecionaTodos('.produtoInfo--cancelButton, .produtoInfo--cancelMobileButton')
+      .forEach((item) => item.addEventListener('click', fecharModal));
+  };
 
-const botoesFechar = () => {
-    // BOTOES FECHAR MODAL
-    selecionaTodos('.produtoInfo--cancelButton, .produtoInfo--cancelMobileButton').forEach( (item) => item.addEventListener('click', fecharModal) )
-}
+  const preencheDadosModal = (item) => {
+    seleciona('.produtoBig img').src = item.img;
+    seleciona('.produtoInfo h1').innerHTML = item.name;
+    seleciona('.produtoInfo--desc').innerHTML = item.description;
+    seleciona('.produtoInfo--actualPrice').innerHTML = `R$ ${item.price.toFixed(2)}`;
+  };
 
+  const pegarKey = (e) => {
+    let key = e.target.closest('.produto-item').getAttribute('data-key');
+    console.log('Produto clicada ' + key);
+    console.log(produtoJson[key]);
+    quantProdutos = 1;
+    modalKey = key;
+    return key;
+  };
 
-const preencheDadosModal = (item) => {
-        seleciona('.produtoBig img').src = item.img
-        seleciona('.produtoInfo h1').innerHTML = item.name
-        seleciona('.produtoInfo--desc').innerHTML = item.description
-        seleciona('.produtoInfo--actualPrice').innerHTML = `R$ ${item.price.toFixed(2)}`
-}
+  const mudarQuantidade = () => {
+    const mais = seleciona('.produtoInfo--qtmais');
+    const menos = seleciona('.produtoInfo--qtmenos');
+    const qt = seleciona('.produtoInfo--qt');
 
-const pegarKey = (e) => {
-    // .closest retorna o elemento mais proximo que tem a class que passamos
-    // do .pizza-item ele vai pegar o valor do atributo data-key
-    let key = e.target.closest('.produto-item').getAttribute('data-key')
-    console.log('Produto clicada ' + key)
-    console.log(produtoJson[key])
+    if (mais && menos && qt) {
+      mais.addEventListener('click', () => {
+        quantProdutos++;
+        qt.innerHTML = quantProdutos;
+      });
 
-    // garantir que a quantidade inicial de pizzas é 1
-    quantProdutos = 1
-
-    // Para manter a informação de qual pizza foi clicada
-    modalKey = key
-
-    return key
-}
-
-const mudarQuantidade = () => {
-    // Ações nos botões + e - da janela modal
-    seleciona('.produtoInfo--qtmais').addEventListener('click', () => {
-        quantProdutos++
-        seleciona('.produtoInfo--qt').innerHTML = quantProdutos
-    })
-
-    seleciona('.produtoInfo--qtmenos').addEventListener('click', () => {
-        if(quantProdutos > 1) {
-            quantProdutos--
-            seleciona('.produtoInfo--qt').innerHTML = quantProdutos	
+      menos.addEventListener('click', () => {
+        if (quantProdutos > 1) {
+          quantProdutos--;
+          qt.innerHTML = quantProdutos;
         }
-    })
-}
+      });
+    }
+  };
 
-produtoJson.map((item, index ) => {
-    //console.log(item)
-    let produtoItem = document.querySelector('.models .produto-item').cloneNode(true)
-    //console.log(pizzaItem)
-    seleciona('.produto-area').append(produtoItem)
+  const cartBtn = document.querySelector(".btn-cart");
+  const cartSidebar = document.querySelector(".cart-sidebar");
+  const closeBtn = document.querySelector(".close-cart");
 
-    // preencher os dados de cada produto
-    produtoItem.setAttribute('data-key', index)
-    produtoItem.querySelector('.produto-item--img img').src = item.img
-    produtoItem.querySelector('.produto-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`
-    produtoItem.querySelector('.produto-item--name').innerHTML = item.name
-    produtoItem.querySelector('.produto-item--desc').innerHTML = item.description
+  if (cartBtn && cartSidebar && closeBtn) {
+    cartBtn.addEventListener("click", () => cartSidebar.classList.add("show"));
+    closeBtn.addEventListener("click", () => cartSidebar.classList.remove("show"));
 
-    produtoItem.querySelector('.produto-item--add').addEventListener('click', (e) => {
-        e.preventDefault()
-        console.log('Clicou no produto')
+    document.addEventListener("click", (event) => {
+      const clickedInsideSidebar = cartSidebar.contains(event.target);
+      const clickedCartBtn = cartBtn.contains(event.target);
+      if (!clickedInsideSidebar && !clickedCartBtn) {
+        cartSidebar.classList.remove("show");
+      }
+    });
+  }
 
-        let chave = pegarKey(e)
+  if (typeof produtoJson !== 'undefined' && Array.isArray(produtoJson)) {
+    produtoJson.map((item, index) => {
+      let produtoItem = document.querySelector('.models .produto-item').cloneNode(true);
+      seleciona('.produto-area').append(produtoItem);
 
-        // abriu janela do modal
-        abrirModal()
+      produtoItem.setAttribute('data-key', index);
+      produtoItem.querySelector('.produto-item--img img').src = item.img;
+      produtoItem.querySelector('.produto-item--price').innerHTML = `R$ ${item.price.toFixed(2)}`;
+      produtoItem.querySelector('.produto-item--name').innerHTML = item.name;
+      produtoItem.querySelector('.produto-item--desc').innerHTML = item.description;
 
-        //preenchimento dos dados 
-        preencheDadosModal(item)
+      produtoItem.querySelector('.produto-item--add').addEventListener('click', (e) => {
+        e.preventDefault();
+        let chave = pegarKey(e);
+        abrirModal();
+        preencheDadosModal(item);
+        seleciona('.produtoInfo--qt').innerHTML = quantProdutos;
+      });
 
-        seleciona('.produtoInfo--qt').innerHTML = quantProdutos
-    })
+      botoesFechar();
+    });
 
-    botoesFechar()
-    
-})
-
-mudarQuantidade()
-
-
+    mudarQuantidade();
+  }
+});

@@ -313,27 +313,33 @@
       }
 
       /* PRODUTO MODAL & CARRINHO */
-      .produtoWindowArea {
+            .produtoWindowArea {
           position: fixed;
-          left: 0;
           top: 0;
-          bottom: 0;
+          left: 0;
           right: 0;
-          background-color: rgba(255,255,255,0.5);
+          bottom: 0;
+
+          background-color: rgba(0, 0, 0, 0.6); /* fundo escuro semitransparente */
           display: none;
-          transition: all ease 0.5s;
+
           justify-content: center;
           align-items: center;
           overflow-y: auto;
+
+          transition: opacity 0.3s ease;
+          z-index: 9999; /* 🔥 GARANTE QUE FICA POR CIMA DE TUDO */
       }
+
       .produtoWindowBody {
-          width: 900px;
-          background-color: #FFF;
+          background: #fff;
+          padding: 30px;
           border-radius: 10px;
-          box-shadow: 0 0 15px #999;
-          display: flex;
-          margin: 20px 0;
+          max-width: 600px;
+          width: 90%;
+          box-shadow: 0 0 20px rgba(0,0,0,0.3);
       }
+
       .produtoBig {
           flex: 1;
           display: flex;
@@ -603,3 +609,21 @@
               font-size: 1.5rem;
           }
       }
+
+     .cart-sidebar {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100%;
+        width: 500px;
+        background: white;
+        color: #001f7a;
+        box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        z-index: 200;
+        transform: translateX(100%);
+        transition: transform 0.3s ease;
+    }
+    .cart-sidebar.show {
+        transform: translateX(0%);
+    }
