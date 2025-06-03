@@ -49,6 +49,13 @@ py -m venv .venv
 
 ### Instalação das dependências
 
+Se estiver com o arquivo atualizado apenas baixe o requirements.txt
+
+```bash
+pip install -r requirements.txt
+```
+Senão baise as dependências abaixo:
+
 ```bash
 pip install django
 pip install django-bootstrap-v5
