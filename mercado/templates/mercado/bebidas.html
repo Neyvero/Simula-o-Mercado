@@ -1,0 +1,85 @@
+<!--Inica o css estático, carrega o Bootstrap, e define o tipo de arquivo HTML-->
+<!DOCTYPE html>
+{% load static %}
+{% load bootstrap5 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<link rel="stylesheet" href="{% static 'mercado/style_hort.css' %}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<script src="{% static 'mercado/mobile-navebar.js' %}" defer></script>
+<script src="{% static 'mercado/bebidas-produto.js' %}" defer></script>
+<script src="{% static 'mercado/js/scripts.js' %}" defer></script>
+
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mercado Digital</title>
+</head>
+<body>
+
+<header>
+  <div class="logo">Mercado Digital</div>
+  <nav>
+    <ul>
+      <!-- Busca de produto -->
+    <li><a href="/mercado">Ínicio</a></li>
+    <li><a href="{% url 'mercado:hortifruti' %}">Hortifruti</a></li>
+    <li><a href="{% url 'mercado:bebidas' %}">Bebidas</a></li>
+    <li><a href="{% url 'mercado:limpeza' %}">Limpeza</a></li>
+    <li><a href="{% url 'mercado:padaria' %}">Padaria</a></li>
+    <li><a href="{% url 'mercado:acougue' %}">Açougue</a></li>
+    <li><a href="{% url 'mercado:mercearia' %}">Mercearia</a></li>
+    <li><a href="{% url 'mercado:laticinios' %}">Laticínios</a></li>
+    <li><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></li>
+    </ul>
+  </nav>
+  <div class="btns">
+    <button class="btn-secondary">Entrar</button>
+    <button class="btn-primary">Comprar Agora</button>
+    <button class="btn-cart" aria-label="Carrinho">
+      🛒 <span class="cart-count">0</span>
+    </button>
+  </div>
+</header>
+
+
+ <div class="models">
+
+    <div class="produto-item">
+      <a href="">
+        <div class="produto-item--img"><img src="" /></div>
+        <div class="produto-item--add">+</div>
+      </a>
+      <div class="produto-item--price">R$ --</div>
+      <div class="produto-item--name">--</div>
+      <div class="produto-item--desc">--</div>
+
+    </div>
+
+
+    <div class="produto-carrinho">
+      <img src="" /> 
+      <div class="cart--item--nome">--</div>
+      <div class="cart--item-qtarea">
+        <button class="cart--item-qtmenos">-</button>
+        <div class="cart--item-qnt">1</div>
+        <button class="cart--item-qtmais">+</button>
+      </div>
+
+    </div>
+
+ </div>
+
+<main>
+
+  <h2 class="titulo-sessao">Bebidas</h2>
+
+  <div class="produto-area"></div>
+
+</main>
+  
+</body>
+</html>
