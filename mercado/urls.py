@@ -1,12 +1,13 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
-from .views import HistoricoCompraViewSet
+from .views import HistoricoCompraViewSet, CarrinhoViewSet
 from . import views
 
 app_name = "mercado"
 
 router = DefaultRouter()
 router.register(r'historico', HistoricoCompraViewSet)
+router.register(r'carrinho', CarrinhoViewSet, basename='carrinho')
 
 urlpatterns = [
     # view normal da homepage
@@ -21,4 +22,5 @@ urlpatterns = [
     path("mercado/limpeza", views.limpeza, name="limpeza"),
     path("mercado/mercearia", views.mercearia, name="mercearia"),
     path("mercado/padaria", views.padaria, name="padaria"),
+    path('', include(router.urls)),
 ]

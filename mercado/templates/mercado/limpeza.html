@@ -1,4 +1,5 @@
 <!--Inica o css estático, carrega o Bootstrap, e define o tipo de arquivo HTML-->
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap5 %}
@@ -25,6 +26,44 @@
   <nav>
     <ul>
       <!-- Busca de produto -->
+=======
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercado Digital</title>
+  <link rel="stylesheet" href="{% static 'mercado/style_hort.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   <script src="{% static 'mercado/mobile-navebar.js' %}" defer></script>
+  <script src="{% static 'mercado/limpeza-produto.js' %}" defer></script>
+  <script src="{% static 'mercado/js/scripts.js' %}" defer></script>
+
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  
+</head>
+
+<body>
+  <header>
+
+  <nav>
+  <a class="logo" href="/mercado">Mercado Digital</a>
+  <button class="mobile-menu" aria-label="Abrir menu de navegação">
+  <div class="line1"></div>
+  <div class="line2"></div>
+  <div class="line3"></div>
+</button>
+
+        </div>
+
+  <ul class="nav-list">
+    <!-- Busca de produto -->
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51
     <li><a href="/mercado">Ínicio</a></li>
     <li><a href="{% url 'mercado:hortifruti' %}">Hortifruti</a></li>
     <li><a href="{% url 'mercado:bebidas' %}">Bebidas</a></li>
@@ -34,6 +73,7 @@
     <li><a href="{% url 'mercado:mercearia' %}">Mercearia</a></li>
     <li><a href="{% url 'mercado:laticinios' %}">Laticínios</a></li>
     <li><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></li>
+<<<<<<< HEAD
     </ul>
   </nav>
   <div class="btns">
@@ -43,6 +83,10 @@
       🛒 <span class="cart-count">0</span>
     </button>
   </div>
+=======
+  </ul>
+  </nav>
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51
 </header>
 
 
@@ -73,6 +117,39 @@
 
  </div>
 
+<<<<<<< HEAD
+=======
+   <!-- criação da janela -->
+ <div class="produtoWindowArea">
+  <div class="produtoWindowBody">
+    <div class="produtoInfo--cancelMobileButton">Voltar</div>
+    <div class="produtoBig">
+      <img src="" /> 
+    </div>
+    <div class="produtoInfo">
+      <h1>--</h1>
+      <div class="produtoInfo--desc">--</div>
+      <div class="produtoInfo--sizearea">
+
+      </div>
+      <div class="produtoInfo--pricearea">
+        <div class="produtoInfo--sector">Preco</div>
+        <div class="produtoInfo--price">
+          <div class="produtoInfo--actualPrice">R$ --</div>
+          <div class="produtoInfo--qtarea">
+            <button class="produtoInfo--qtmenos">-</button>
+            <div class="produtoInfo--qt">1</div>
+            <button class="produtoInfo--qtmais">+</button>
+          </div>
+        </div>
+      </div>
+      <div class="produtoInfo--addButton">Adicionar ao carrinho</div>
+      <div class="produtoInfo--cancelButton">Cancelar</div>
+    </div>
+  </div>
+ </div>
+
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51
 <main>
 
   <h2 class="titulo-sessao">Limpeza</h2>
@@ -80,6 +157,12 @@
   <div class="produto-area"></div>
 
 </main>
+<<<<<<< HEAD
   
 </body>
 </html>
+=======
+
+</body>
+</html>
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51

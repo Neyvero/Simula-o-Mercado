@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 {% load static %}
 {% load bootstrap5 %}
@@ -19,6 +20,39 @@
   <nav>
     <ul>
       <!-- Busca de produto -->
+=======
+<!--Inica o css estático, carrega o Bootstrap, e define o tipo de arquivo HTML-->
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Mercado Digital</title>
+  <link rel="stylesheet" href="{% static 'mercado/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   <script src="{% static 'mercado/mobile-navebar.js' %}" defer></script>
+  {% load bootstrap5 %}
+  {% bootstrap_css %}
+  {% bootstrap_javascript %}
+  
+</head>
+
+<body>
+  <header>
+  <nav>
+  <a class="logo" href="/mercado">Mercado Digital</a>
+  <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+
+  <ul class="nav-list">
+    <!-- Busca de produto -->
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51
     <li><a href="/mercado">Ínicio</a></li>
     <li><a href="{% url 'mercado:hortifruti' %}">Hortifruti</a></li>
     <li><a href="{% url 'mercado:bebidas' %}">Bebidas</a></li>
@@ -28,6 +62,7 @@
     <li><a href="{% url 'mercado:mercearia' %}">Mercearia</a></li>
     <li><a href="{% url 'mercado:laticinios' %}">Laticínios</a></li>
     <li><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></li>
+<<<<<<< HEAD
     </ul>
   </nav>
   <div class="btns">
@@ -111,3 +146,13 @@
       <div class="category-title"><a href="{% url 'mercado:higiene_pessoal' %}">Higiene Pessoal</a></div>
       <div class="category-desc">Produtos de cuidado pessoal</div>
    
+=======
+  </ul>
+  </nav>
+</header>
+
+<main class="hero"></main>
+  
+</body>
+</html>
+>>>>>>> 9502bb8b3ae9ab5d4dc9bbc7997cbf797611eb51
