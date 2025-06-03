@@ -3,18 +3,27 @@
 # Simula-Mercado-Digital
 
 ## Descrição do projeto
+### Versão 1.0
 Este é a evolução do projeto ao decorrer do desenvolvimento dele:
-A primeira Imagem é refente ao código, quando utilizarmos a interface visual do Tkinter para representarmos os dados do projeto
-<img src="./exemplo1.jpg"/>
+A primeira Imagem é refente ao código, quando utilizarmos a interface visual do Tkinter para representarmos os dados do projeto.
+
+<img src="./exemplo1.png"/>
+
+### Versão 2.0
 O projeto, teve uma mudança gráfica, pois começamos a utilizar o framework Django, então tivemos que fazer mudanças no arquivo interno e na aparência do site, indo para uma abordagem gameficada.
+
 <img src="./examplo2.jpg"/>
+
+### Versão 3.0
 Agora o site está em sua versão final, com um design mais moderno e com sua funcionalidades novas, concluindo o objetivo do site.
-<img src="./exemplo3.jpg"/>
-<img src="./exemplo4.jpg"/>
+
+<img src="./exemplo3.png"/>
+<img src="./exemplo4.png"/>
 
 Este código utiliza conceitos de estruturas de dados para realizar uma simulação de mercado, com funções de carrinhos e compras automatizadas, incluindo histórico do carrinho realizada por busca binária e utilizando conceitos como FIFO e LIFO.
 
-O projeto conta com módulos como CustomTkinter, JSON, os, e messagebox.
+O projeto conta com módulos como CustomTkinter, JSON, os, e messagebox, asgiref, beautifulsoup4, cffi, cryptography, darkdetect, Django, django-bootstrap-v5, djangorestframework, mysqlclient, packaging, pycparser, PyMySQL, soupsieve, sqlparse, typing_extensions, tzdata;
+
 
 ---
 
@@ -46,6 +55,7 @@ pip install django-bootstrap-v5
 pip install djangorestframework mysqlclient
 pip install djangorestframework
 pip install pymysql
+pip install cryptography
 ```
 
 ### Rodar o projeto
@@ -75,13 +85,44 @@ python manage.py runserver
 Simula-Mercado-Digital/
 ├── .venv/
 ├── mercado/
-  ├──/__pycache__/
-  ├──/migrations/
-  ├──/static/mercado/ style.css
-  ├──/templates/mercado/ index.html
+│   ├── __pycache__/
+│   ├── migrations/
+│   ├── static/
+│   │   └── mercado/
+│   │       ├── style.css
+│   │       ├── style_hort.css
+│   │       ├── scripts.js
+│   │       ├── hort-produto.js
+│   ├── templates/
+│   │   └── mercado/
+│   │       ├── index.html
+│   │       ├── acougue.html
+│   │       ├── bebidas.html
+│   │       ├── higiene_pessoal.html
+│   │       ├── hortifruti.html
+│   │       ├── laticinios.html
+│   │       ├── limpeza.html
+│   │       ├── mercearia.html
+│   │       ├── padaria.html
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── models.py
+│   ├── serializers.py
+│   ├── tests.py
+│   ├── urls.py
+│   ├── views.py
 ├── Projeto/
-├── users/         
-├── manage.py               
+├── users/
+├── manage.py
+├── requirements.txt
+├── README.md
+├── LICENSE
+├── exemplo1.png
+├── exemplo2.jpg
+├── exemplo3.png
+├── exemplo4.png
+             
 ```
 
 ---
@@ -114,16 +155,3 @@ CREATE DATABASE test_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 | Yuri                    | 
 | Davi                    |
 =======
-# Site-Django-Mercado
-Este é um site destinado a criação de um sistema de compras online, que simula um mercado digital.
-
-# Simula-o-Mercado
-Este código utiliza dos conceitos de estrutura de dados para realizar uma simulação de mercado, com funções de carrinhos e compras automatizadas, com histórico do carrinho, realizada por busca binária, utilizando conceitos como FIFO,LIFO.
-
-Módulos: CustomTkinter, Json, os, messagebox.
- HEAD
- 53b4557 (Create README.md)
-
-Descrição do Código: 
-
-Integrantes: Neyverson, Ythalo, Henrique , Caio Proença, Gustavo Henrique Fragoso, Ícaro, Yuri, Davi.
