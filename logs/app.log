@@ -1,0 +1,80 @@
+INFO 2025-06-03 19:09:45,835 autoreload Watching for file changes with StatReloader
+INFO 2025-06-03 19:11:06,575 autoreload C:\Users\neyve\OneDrive\햞ea de Trabalho\Vscode\Python\Backup do projeto final\mercado\views.py changed, reloading.
+INFO 2025-06-03 19:11:07,204 autoreload Watching for file changes with StatReloader
+INFO 2025-06-03 19:11:25,562 autoreload C:\Users\neyve\OneDrive\햞ea de Trabalho\Vscode\Python\Backup do projeto final\mercado\urls.py changed, reloading.
+INFO 2025-06-03 19:11:26,147 autoreload Watching for file changes with StatReloader
+DEBUG 2025-06-03 19:14:13,664 proactor_events Using proactor: IocpProactor
+DEBUG 2025-06-03 19:14:13,666 views Debug log ativado
+INFO 2025-06-03 19:14:13,667 views Info log ativado
+WARNING 2025-06-03 19:14:13,668 views Warning log ativado
+ERROR 2025-06-03 19:14:13,668 views Error log ativado
+CRITICAL 2025-06-03 19:14:13,668 views Critical log ativado
+INFO 2025-06-03 19:19:19,379 autoreload C:\Users\neyve\OneDrive\햞ea de Trabalho\Vscode\Python\Backup do projeto final\Projeto\settings.py changed, reloading.
+[INFO] 2025-06-03 19:19:20,349 django.utils.autoreload: Watching for file changes with StatReloader
+[DEBUG] 2025-06-03 19:19:20,529 django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 19:19:20,530 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 19:19:20,533 django.db.backends: (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 19:19:20,538 django.db.backends: (0.016) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[INFO] 2025-06-03 19:22:42,716 django.utils.autoreload: Watching for file changes with StatReloader
+[DEBUG] 2025-06-03 19:22:42,860 django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 19:22:42,862 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 19:22:42,866 django.db.backends: (0.000) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 19:22:42,872 django.db.backends: (0.000) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-06-03 19:23:35,461 django.db.backends: (0.016) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 19:23:35,462 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 19:23:35,462 django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-06-03 22:23:35.456166' AND `django_session`.`session_key` = 'silqehmai6lngu3hjipnagq62b9w9z0j') LIMIT 21; args=('2025-06-03 22:23:35.456166', 'silqehmai6lngu3hjipnagq62b9w9z0j'); alias=default
+[DEBUG] 2025-06-03 19:23:35,466 django.db.backends: (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:35,469 django.db.backends: (0.000) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`usuario_id`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em`, `mercado_carrinho`.`teste_temp` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`usuario_id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:35,482 django.db.backends: (0.000) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 1; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:42,817 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 19:23:42,819 django.db.backends: (0.016) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-06-03 22:23:42.813666' AND `django_session`.`session_key` = 'silqehmai6lngu3hjipnagq62b9w9z0j') LIMIT 21; args=('2025-06-03 22:23:42.813666', 'silqehmai6lngu3hjipnagq62b9w9z0j'); alias=default
+[DEBUG] 2025-06-03 19:23:42,821 django.db.backends: (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:42,823 django.db.backends: (0.000) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`usuario_id`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em`, `mercado_carrinho`.`teste_temp` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`usuario_id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:42,825 django.db.backends: (0.000) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 1; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:44,387 asyncio: Using proactor: IocpProactor
+[DEBUG] 2025-06-03 19:23:44,389 mercado.views: Debug log ativado
+[INFO] 2025-06-03 19:23:44,389 mercado.views: Info log ativado
+[WARNING] 2025-06-03 19:23:44,390 mercado.views: Warning log ativado
+[ERROR] 2025-06-03 19:23:44,390 mercado.views: Error log ativado
+[CRITICAL] 2025-06-03 19:23:44,390 mercado.views: Critical log ativado
+[DEBUG] 2025-06-03 19:23:53,255 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 19:23:53,257 django.db.backends: (0.000) SELECT `django_session`.`session_key`, `django_session`.`session_data`, `django_session`.`expire_date` FROM `django_session` WHERE (`django_session`.`expire_date` > '2025-06-03 22:23:53.252332' AND `django_session`.`session_key` = 'silqehmai6lngu3hjipnagq62b9w9z0j') LIMIT 21; args=('2025-06-03 22:23:53.252332', 'silqehmai6lngu3hjipnagq62b9w9z0j'); alias=default
+[DEBUG] 2025-06-03 19:23:53,262 django.db.backends: (0.000) SELECT `auth_user`.`id`, `auth_user`.`password`, `auth_user`.`last_login`, `auth_user`.`is_superuser`, `auth_user`.`username`, `auth_user`.`first_name`, `auth_user`.`last_name`, `auth_user`.`email`, `auth_user`.`is_staff`, `auth_user`.`is_active`, `auth_user`.`date_joined` FROM `auth_user` WHERE `auth_user`.`id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:53,266 django.db.backends: (0.000) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`usuario_id`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em`, `mercado_carrinho`.`teste_temp` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`usuario_id` = 1 LIMIT 21; args=(1,); alias=default
+[DEBUG] 2025-06-03 19:23:53,268 django.db.backends: (0.000) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 1; args=(1,); alias=default
+[INFO] 2025-06-03 19:25:54,400 django.utils.autoreload: C:\Users\neyve\OneDrive\햞ea de Trabalho\Vscode\Python\Backup do projeto final\mercado\urls.py changed, reloading.
