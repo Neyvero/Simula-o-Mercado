@@ -409,7 +409,7 @@
       }
       .produtoInfo--qtarea {
           display: inline-flex;
-          background-color: #EEE;
+          background-color: #010101;
           border-radius: 10px;
           height: 30px;
       }
@@ -420,7 +420,7 @@
           outline: 0;
           cursor: pointer;
           padding: 0 10px;
-          color: #ffffff;
+          color: #000000;
       }
       .produtoInfo--qt {
           line-height: 30px;
@@ -434,7 +434,7 @@
           padding: 20px 30px;
           border-radius: 20px;
           background-color: #48d05f;
-          color: #FFF;
+          color: #000000;
           display: inline-block;
           cursor: pointer;
           margin-right: 30px;
