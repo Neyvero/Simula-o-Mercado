@@ -295,20 +295,20 @@
 
       .produto-item--price {
           font-size: 15px;
-          color: #333;
+          color: #fffefe;
           margin-top: 5px;
       }
 
       .produto-item--name {
           font-size: 20px;
           font-weight: bold;
-          color: #000;
+          color: #ffffff;
           margin-top: 5px;
       }
 
       .produto-item--desc {
           font-size: 13px;
-          color: #555;
+          color: #ffffff;
           margin-top: 10px;
       }
 
@@ -420,7 +420,7 @@
           outline: 0;
           cursor: pointer;
           padding: 0 10px;
-          color: #333;
+          color: #ffffff;
       }
       .produtoInfo--qt {
           line-height: 30px;
