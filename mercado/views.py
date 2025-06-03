@@ -86,40 +86,42 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
     permission_classes = [AllowAny]
 
     def get_queryset(self):
-        user = self.request.user
-        if user.is_authenticated:
-            return Carrinho.objects.filter(usuario=user)
-        else:
-            return Carrinho.objects.none()
+        cpf = self.request.query_params.get('cpf')
+        if cpf:
+            return Carrinho.objects.filter(cpf=cpf)
+        return Carrinho.objects.none()
+
 
     def list(self, request):
-        user = request.user
-        if not user.is_authenticated:
-            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+        cpf = request.query_params.get('cpf')
+        if not cpf:
+            return Response({"erro": "CPF não informado"}, status=status.HTTP_400_BAD_REQUEST)
 
-        carrinho, _ = Carrinho.objects.get_or_create(usuario=user)
+        carrinho, _ = Carrinho.objects.get_or_create(cpf=cpf)
         serializer = CarrinhoSerializer(carrinho)
         return Response(serializer.data)
 
-    def create(self, request):
-        user = request.user
-        if not user.is_authenticated:
-            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
 
-        carrinho, _ = Carrinho.objects.get_or_create(usuario=user)
+    def create(self, request):
+        cpf = request.data.get('cpf')
+        if not cpf:
+            return Response({"erro": "CPF não informado"}, status=status.HTTP_400_BAD_REQUEST)
+
+        carrinho, _ = Carrinho.objects.get_or_create(cpf=cpf)
         serializer = ItemCarrinhoSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(carrinho=carrinho)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+
     @action(detail=False, methods=['post'])
     def finalizar(self, request):
-        user = request.user
-        if not user.is_authenticated:
-            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+        cpf = request.query_params.get('cpf')
+        if not cpf:
+            return Response({"erro": "CPF não informado"}, status=status.HTTP_400_BAD_REQUEST)
 
-        carrinho = get_object_or_404(Carrinho, usuario=user)
+        carrinho = get_object_or_404(Carrinho, cpf=cpf)
         itens = carrinho.itens.all()
 
         if not itens:
@@ -133,17 +135,18 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
             ItemCompra.objects.create(
                 historico=historico, descricao=item.descricao)
 
-        itens.delete()  # limpa o carrinho
+        itens.delete()
 
         return Response(HistoricoCompraSerializer(historico).data)
 
+
     @action(detail=True, methods=['patch'])
     def atualizar_quantidade(self, request, pk=None):
-        user = request.user
-        if not user.is_authenticated:
-            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+        cpf = request.query_params.get('cpf')
+        if not cpf:
+            return Response({"erro": "CPF não informado"}, status=status.HTTP_400_BAD_REQUEST)
 
-        item = get_object_or_404(ItemCarrinho, pk=pk, carrinho__usuario=user)
+        item = get_object_or_404(ItemCarrinho, pk=pk, carrinho__cpf=cpf)
         nova_qt = request.data.get("quantidade")
 
         if nova_qt is None:
@@ -160,11 +163,11 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
 
     @action(detail=False, methods=['delete'])
     def limpar(self, request):
-        user = request.user
-        if not user.is_authenticated:
-            return Response({"erro": "Usuário não autenticado"}, status=status.HTTP_401_UNAUTHORIZED)
+        cpf = request.query_params.get('cpf')
+        if not cpf:
+            return Response({"erro": "CPF não informado"}, status=status.HTTP_400_BAD_REQUEST)
 
-        carrinho = Carrinho.objects.filter(usuario=user).first()
+        carrinho = Carrinho.objects.filter(cpf=cpf).first()
         if carrinho:
             carrinho.itens.all().delete()
             return Response({"mensagem": "Carrinho limpo com sucesso."}, status=status.HTTP_204_NO_CONTENT)

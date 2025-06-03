@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const cartItemsContainer = document.querySelector('.cart-items');
   const cartTotalElement = document.querySelector('.cart-total');
   const cartCountElement = document.querySelector('.cart-count');
+  const cpfModal = document.getElementById('cpfModal');
+  const cpfInput = document.getElementById('cpfInput');
+  const cpfSubmit = document.getElementById('cpfSubmit');
 
   function getCSRFToken() {
     let cookieValue = null;
@@ -16,19 +19,63 @@ document.addEventListener("DOMContentLoaded", () => {
     return cookieValue;
   }
 
+  function validarCPF(cpf) {
+    const re = /^\d{3}\.\d{3}\.\d{3}-\d{2}$/;
+    return re.test(cpf);
+  }
+
+  function mostrarModalCPF() {
+    cpfModal.style.display = 'flex';
+  }
+
+  function esconderModalCPF() {
+    cpfModal.style.display = 'none';
+  }
+
+  if (!localStorage.getItem('cpfUsuario')) {
+    mostrarModalCPF();
+  } else {
+    carregarCarrinho();
+  }
+
+  cpfSubmit.addEventListener('click', () => {
+    const cpf = cpfInput.value.trim();
+    if (!validarCPF(cpf)) {
+      alert('CPF inválido. Use o formato 000.000.000-00');
+      return;
+    }
+    localStorage.setItem('cpfUsuario', cpf);
+    esconderModalCPF();
+    carregarCarrinho();
+  });
+
+  cpfInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      cpfSubmit.click();
+    }
+  });
+
   async function carregarCarrinho() {
+    const cpf = localStorage.getItem('cpfUsuario');
+    if (!cpf) {
+      mostrarModalCPF();
+      return;
+    }
     try {
-      const response = await fetch('/api/carrinho/', {
+      const response = await fetch(`/api/carrinho/?cpf=${encodeURIComponent(cpf)}`, {
         headers: {
-          'X-Requested-With': 'XMLHttpRequest'
-        }
+          'X-Requested-With': 'XMLHttpRequest',
+          'X-CSRFToken': getCSRFToken()
+        },
+
       });
 
       if (!response.ok) {
         console.error('Erro ao carregar carrinho');
         return;
       }
-
+      
       const data = await response.json();
 
       cartItemsContainer.innerHTML = '';
@@ -90,8 +137,13 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.querySelector('.btn-clear-cart')?.addEventListener('click', async () => {
+    const cpf = localStorage.getItem('cpfUsuario');
+    if (!cpf) {
+      mostrarModalCPF();
+      return;
+    }
     try {
-      const response = await fetch('/api/carrinho/limpar/', {
+      const response = await fetch(`/api/carrinho/limpar/?cpf=${encodeURIComponent(cpf)}`, {
         method: 'DELETE',
         headers: {
           'X-CSRFToken': getCSRFToken()
@@ -109,8 +161,13 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.querySelector('.btn-finalizar-compra')?.addEventListener('click', async () => {
+    const cpf = localStorage.getItem('cpfUsuario');
+    if (!cpf) {
+      mostrarModalCPF();
+      return;
+    }
     try {
-      const response = await fetch('/api/carrinho/finalizar/', {
+      const response = await fetch(`/api/carrinho/finalizar/?cpf=${encodeURIComponent(cpf)}`, {
         method: 'POST',
         headers: {
           'X-CSRFToken': getCSRFToken()

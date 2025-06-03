@@ -27,23 +27,13 @@ class ItemCompra(models.Model):
 
 
 class Carrinho(models.Model):
-    usuario = models.ForeignKey(
-        User,
-        on_delete=models.CASCADE,
-        null=True,
-        blank=True
-    )
+    cpf = models.CharField(max_length=14, unique=True, null=True, blank=True)
     criado_em = models.DateTimeField(auto_now_add=True)
     atualizado_em = models.DateTimeField(auto_now=True)
-    teste_temp = models.BooleanField(default=False)
-
-    def __str__(self):
-        return f"Carrinho de {self.usuario}"
-
+    # retire o campo usuario (ou deixe para compatibilidade e ignore)
 
 class ItemCarrinho(models.Model):
-    carrinho = models.ForeignKey(
-        Carrinho, on_delete=models.CASCADE, related_name='itens')
-    descricao = models.CharField(max_length=255)
-    quantidade = models.PositiveIntegerField()
+    carrinho = models.ForeignKey(Carrinho, related_name='itens', on_delete=models.CASCADE)
+    descricao = models.CharField(max_length=200)
+    quantidade = models.PositiveIntegerField(default=1)
     preco_unitario = models.DecimalField(max_digits=10, decimal_places=2)
