@@ -111,29 +111,34 @@ async function carregarCarrinho() {
   }
 }
 
-  async function atualizarQuantidade(id, novaQt) {
-    console.log("ID do item:", id);
-    console.log("Quantidade para enviar:", novaQt);
+ async function atualizarQuantidade(id, novaQt) {
+  const cpf = localStorage.getItem('cpfUsuario'); //EU SABIA QUE ERA O CPF HAHAHAHAHHA
 
-    try {
-      const response = await fetch(`/api/carrinho/${id}/atualizar_quantidade/`, {
-        method: 'PATCH',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-CSRFToken': getCSRFToken(),
-        },
-        body: JSON.stringify({ quantidade: novaQt })
-      });
-
-      if (response.ok) {
-        window.recarregarCarrinho();
-      } else {
-        console.error('Erro ao atualizar quantidade');
-      }
-    } catch (err) {
-      console.error('Erro:', err);
-    }
+  if (!cpf) {
+    alert("Por favor, informe o CPF primeiro!");
+    return;
   }
+
+  try {
+    const response = await fetch(`/api/carrinho/${id}/atualizar_quantidade/?cpf=${encodeURIComponent(cpf)}`, { // Passa o CPF na URL
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCSRFToken(),
+      },
+      body: JSON.stringify({ quantidade: novaQt })
+    });
+
+    if (response.ok) {
+      window.recarregarCarrinho();
+    } else {
+      console.error('Erro ao atualizar quantidade');
+    }
+  } catch (err) {
+    console.error('Erro:', err);
+  }
+}
+
 
   document.querySelector('.btn-clear-cart')?.addEventListener('click', async () => {
     const cpf = localStorage.getItem('cpfUsuario');
