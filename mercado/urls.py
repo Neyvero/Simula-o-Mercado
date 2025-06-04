@@ -24,4 +24,5 @@ urlpatterns = [
     path("mercado/padaria", views.padaria, name="padaria"),
     path('', include(router.urls)),
     path('teste/', views.teste_view, name='teste'),
+    path('buscar-produto/', views.buscar_produto, name='buscar_produto'),
 ]

@@ -112,12 +112,15 @@ async function carregarCarrinho() {
 }
 
   async function atualizarQuantidade(id, novaQt) {
+    console.log("ID do item:", id);
+    console.log("Quantidade para enviar:", novaQt);
+
     try {
       const response = await fetch(`/api/carrinho/${id}/atualizar_quantidade/`, {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
-          'X-CSRFToken': getCSRFToken()
+          'X-CSRFToken': getCSRFToken(),
         },
         body: JSON.stringify({ quantidade: novaQt })
       });

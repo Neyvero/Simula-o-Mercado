@@ -15,6 +15,7 @@ from rest_framework.permissions import AllowAny
 from django.http import JsonResponse
 import logging
 import asyncio
+from django.shortcuts import redirect
 
 logger = logging.getLogger(__name__)
 
@@ -172,3 +173,60 @@ class CarrinhoViewSet(viewsets.ModelViewSet):
             carrinho.itens.all().delete()
             return Response({"mensagem": "Carrinho limpo com sucesso."}, status=status.HTTP_204_NO_CONTENT)
         return Response({"erro": "Carrinho não encontrado."}, status=status.HTTP_404_NOT_FOUND)
+
+def buscar_produto(request):
+    termo = request.GET.get('q', '').strip().lower()
+
+    produtos = [
+        {'name': 'Alcatra', 'sessaoId': 'acougue'},
+        {'name': 'Frango', 'sessaoId': 'acougue'},
+        {'name': 'Picanha', 'sessaoId': 'acougue'},
+        {'name': 'Cerveja', 'sessaoId': 'bebidas'},
+        {'name': 'Água', 'sessaoId': 'bebidas'},
+        {'name': 'Suco', 'sessaoId': 'bebidas'},
+        {'name': 'Sabonete', 'sessaoId': 'higiene_pessoal'},
+        {'name': 'Shampoo', 'sessaoId': 'higiene_pessoal'},
+        {'name': 'Banana', 'sessaoId': 'hortifruti'},
+        {'name': 'Maçã', 'sessaoId': 'hortifruti'},
+        {'name': 'Tomate', 'sessaoId': 'hortifruti'},
+        {'name': 'Uva', 'sessaoId': 'hortifruti'},
+        {'name': 'Leite', 'sessaoId': 'laticinios'},
+        {'name': 'Queijo', 'sessaoId': 'laticinios'},
+        {'name': 'Detergente', 'sessaoId': 'limpeza'},
+        {'name': 'Sabão em Pó', 'sessaoId': 'limpeza'},
+        {'name': 'Vassoura', 'sessaoId': 'limpeza'},
+        {'name': 'Arroz', 'sessaoId': 'mercearia'},
+        {'name': 'Café', 'sessaoId': 'mercearia'},
+        {'name': 'Feijão', 'sessaoId': 'mercearia'},
+        {'name': 'Pão Francês', 'sessaoId': 'padaria'},
+        {'name': 'Bolo', 'sessaoId': 'padaria'},
+        {'name': 'Pão Francês', 'sessaoId': 'padaria'},
+        {'name': 'Rosquinha', 'sessaoId': 'padaria'},
+    ]
+
+    paths = {
+        'acougue': 'mercado:acougue',
+        'bebidas': 'mercado:bebidas',
+        'hortifruti': 'mercado:hortifruti',
+        'limpeza': 'mercado:limpeza',
+        'padaria': 'mercado:padaria',
+        'mercearia': 'mercado:mercearia',
+        'laticinios': 'mercado:laticinios',
+        'higiene_pessoal': 'mercado:higiene_pessoal',
+    }
+
+    produto_encontrado = None
+    for p in produtos:
+        if termo in p['name'].lower():
+            produto_encontrado = p
+            break
+
+    if not produto_encontrado:
+
+        return redirect('mercado:index')
+
+    sessao = produto_encontrado['sessaoId']
+    if sessao not in paths:
+        return redirect('mercado:index')
+
+    return redirect(paths[sessao])

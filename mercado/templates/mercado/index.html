@@ -33,8 +33,6 @@
     </ul>
   </nav>
   <div class="btns">
-    <button class="btn-secondary">Entrar</button>
-    <button class="btn-primary">Comprar Agora</button>
     <button class="btn-cart" aria-label="Carrinho">
       🛒 <span class="cart-count">0</span>
     </button>
@@ -68,8 +66,10 @@
   <h2>Sua Compra Online,<br />Rápida e Segura</h2>
   <p>Compre produtos frescos, bebidas, e tudo para sua casa com facilidade.<br />Entrega rápida e preços imbatíveis.</p>
   <div class="btn-container">
-    <button class="btn-primary">Comprar Agora</button>
-    <input type="text" placeholder="Procure seu produto..." />
+    <form method="get" action="{% url 'mercado:buscar_produto' %}">
+  <input type="text" name="q" placeholder="Procure seu produto..." required />
+  <button class="btn-primary" type="submit">Comprar Agora</button>
+</form>
   </div>
   <div class="stats">
     <div class="stat">
