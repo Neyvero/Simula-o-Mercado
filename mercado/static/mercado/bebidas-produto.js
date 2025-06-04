@@ -22,11 +22,17 @@ document.querySelector('.produtoInfo--addButton').addEventListener('click', asyn
   let produto = produtoJson[id];
 
   const qt = quantProdutos; 
+  const cpf = localStorage.getItem('cpfUsuario');
+  if (!cpf) {
+    alert('Informe seu CPF antes de adicionar itens.');
+    return;
+  }
 
   const payload = {
     descricao: produto.name,
     quantidade: qt,
-    preco_unitario: produto.price
+    preco_unitario: produto.price,
+    cpf: cpf 
   };
 
   const response = await fetch('/api/carrinho/', {

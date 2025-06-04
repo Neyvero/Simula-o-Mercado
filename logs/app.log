@@ -4745,3 +4745,392 @@ django.core.exceptions.FieldError: Cannot resolve keyword 'usuario' into field. 
 [DEBUG] 2025-06-03 20:30:48,752 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '025.111.233-82' LIMIT 21; args=('025.111.233-82',); alias=default
 [DEBUG] 2025-06-03 20:30:48,759 django.db.backends: (0.004) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 3; args=(3,); alias=default
 [INFO] 2025-06-03 20:58:39,916 django.utils.autoreload: Watching for file changes with StatReloader
+[DEBUG] 2025-06-03 22:00:44,728 django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:00:44,731 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:00:44,734 django.db.backends: (0.002) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:00:44,739 django.db.backends: (0.001) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-06-03 22:01:03,351 django.db.backends: (0.000) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:03,353 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:03,354 django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:03,359 django.db.backends: (0.001) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[INFO] 2025-06-03 22:01:24,578 django.utils.autoreload: Watching for file changes with StatReloader
+[DEBUG] 2025-06-03 22:01:24,756 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:24,757 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:24,759 django.db.backends: (0.001) 
+            SELECT
+                table_name,
+                table_type,
+                table_comment
+            FROM information_schema.tables
+            WHERE table_schema = DATABASE()
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:24,768 django.db.backends: (0.001) SELECT `django_migrations`.`id`, `django_migrations`.`app`, `django_migrations`.`name`, `django_migrations`.`applied` FROM `django_migrations`; args=(); alias=default
+[DEBUG] 2025-06-03 22:01:45,947 django.db.backends: (0.003) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:45,950 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:45,952 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:45,977 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:51,308 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:51,310 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:51,312 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:51,318 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:51,334 django.db.backends: (0.002) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:51,338 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:51,341 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:51,345 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:53,501 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:53,502 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' ORDER BY `mercado_carrinho`.`id` ASC LIMIT 1; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:53,503 django.db.backends: (0.000) BEGIN; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:53,505 django.db.backends: (0.001) DELETE FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:53,507 django.db.backends: (0.002) COMMIT; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:53,516 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:53,518 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:53,520 django.db.backends: (0.000) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:56,327 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:56,328 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:56,333 django.db.backends: (0.003) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Frango', 1, 20.00); args=[2, 'Frango', 1, Decimal('20.00')]; alias=default
+[DEBUG] 2025-06-03 22:01:56,344 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:56,346 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:56,350 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:58,403 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:58,404 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:58,406 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:58,409 django.db.backends: (0.002) INSERT INTO `mercado_historicocompra` (`total`, `data_compra`) VALUES (20.00, '2025-06-04 01:01:58.406968'); args=[Decimal('20.00'), '2025-06-04 01:01:58.406968']; alias=default
+[DEBUG] 2025-06-03 22:01:58,411 django.db.backends: (0.002) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (10, 'Frango'); args=[10, 'Frango']; alias=default
+[DEBUG] 2025-06-03 22:01:58,413 django.db.backends: (0.000) BEGIN; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:58,415 django.db.backends: (0.001) DELETE FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:01:58,417 django.db.backends: (0.001) COMMIT; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:58,419 django.db.backends: (0.000) SELECT `mercado_itemcompra`.`id`, `mercado_itemcompra`.`historico_id`, `mercado_itemcompra`.`descricao` FROM `mercado_itemcompra` WHERE `mercado_itemcompra`.`historico_id` = 10; args=(10,); alias=default
+[DEBUG] 2025-06-03 22:01:58,442 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:01:58,443 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:01:58,447 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:02:04,893 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:02:04,895 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:02:04,900 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[WARNING] 2025-06-03 22:02:06,793 django.request: Bad Request: /api/carrinho/
+[DEBUG] 2025-06-03 22:08:38,584 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:38,586 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:38,588 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:38,593 django.db.backends: (0.002) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:38,607 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:38,609 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:38,611 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:38,615 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:43,846 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:43,849 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:43,853 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:43,863 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:43,866 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:43,869 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:44,762 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:44,767 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:44,769 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:44,775 django.db.backends: (0.002) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:44,786 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:44,788 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:44,794 django.db.backends: (0.003) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:45,518 django.db.backends: (0.002) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:45,520 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:45,521 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:45,526 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:45,544 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:45,545 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:45,549 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:46,052 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:46,053 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:46,057 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:46,066 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:46,068 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:46,072 django.db.backends: (0.002) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:53,075 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:53,077 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:53,081 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:08:53,099 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:08:53,101 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:08:53,103 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:00,906 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:00,911 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:00,915 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:00,921 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:00,923 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:00,927 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:01,691 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:01,693 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:01,698 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:01,707 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:01,708 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:01,712 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:30,317 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:30,319 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:30,321 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:30,326 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:31,708 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:31,714 django.db.backends: (0.003) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:31,718 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:09:32,333 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:09:32,335 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:09:32,339 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:10:29,980 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:10:29,981 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:10:29,985 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:10:31,451 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:10:31,454 django.db.backends: (0.002) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:10:31,459 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:10:38,200 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:10:38,201 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:10:38,206 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:11:04,651 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:11:04,653 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:11:04,657 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:11:05,290 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:11:05,291 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:11:05,294 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:11:05,940 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:11:05,941 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:11:05,944 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:11:11,548 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:11:11,549 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:11:11,553 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:11:21,477 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:11:21,479 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:11:21,481 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:11:29,548 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:11:29,550 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:11:29,553 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:07,666 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:07,677 django.db.backends: (0.009) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:07,696 django.db.backends: (0.004) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:21,400 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:21,405 django.db.backends: (0.002) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:21,410 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:22,160 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:22,161 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:22,167 django.db.backends: (0.002) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:54,546 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:54,547 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:54,550 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Shampoo', 1, 8.00); args=[2, 'Shampoo', 1, Decimal('8.00')]; alias=default
+[DEBUG] 2025-06-03 22:12:54,567 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:54,569 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:54,571 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:57,348 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:57,349 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:57,351 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:57,354 django.db.backends: (0.002) INSERT INTO `mercado_historicocompra` (`total`, `data_compra`) VALUES (8.00, '2025-06-04 01:12:57.351834'); args=[Decimal('8.00'), '2025-06-04 01:12:57.351834']; alias=default
+[DEBUG] 2025-06-03 22:12:57,357 django.db.backends: (0.003) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (11, 'Shampoo'); args=[11, 'Shampoo']; alias=default
+[DEBUG] 2025-06-03 22:12:57,358 django.db.backends: (0.000) BEGIN; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:57,361 django.db.backends: (0.002) DELETE FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:12:57,363 django.db.backends: (0.002) COMMIT; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:57,366 django.db.backends: (0.000) SELECT `mercado_itemcompra`.`id`, `mercado_itemcompra`.`historico_id`, `mercado_itemcompra`.`descricao` FROM `mercado_itemcompra` WHERE `mercado_itemcompra`.`historico_id` = 11; args=(11,); alias=default
+[DEBUG] 2025-06-03 22:12:57,392 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:12:57,394 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:12:57,399 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[WARNING] 2025-06-03 22:12:59,475 django.request: Bad Request: /api/carrinho/
+[WARNING] 2025-06-03 22:13:53,017 django.request: Bad Request: /api/carrinho/
+[DEBUG] 2025-06-03 22:13:56,317 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:13:56,319 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:13:56,322 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:13:59,346 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:13:59,348 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:13:59,353 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:14:02,517 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:02,518 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:14:02,521 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Picanha', 1, 36.00); args=[2, 'Picanha', 1, Decimal('36.00')]; alias=default
+[DEBUG] 2025-06-03 22:14:02,537 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:02,539 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:14:02,541 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:14:04,310 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:04,311 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:14:04,313 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:14:15,971 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:15,972 django.db.backends: (0.000) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:14:15,974 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:14:15,976 django.db.backends: (0.001) INSERT INTO `mercado_historicocompra` (`total`, `data_compra`) VALUES (36.00, '2025-06-04 01:14:15.974873'); args=[Decimal('36.00'), '2025-06-04 01:14:15.974873']; alias=default
+[DEBUG] 2025-06-03 22:14:15,979 django.db.backends: (0.002) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (12, 'Picanha'); args=[12, 'Picanha']; alias=default
+[DEBUG] 2025-06-03 22:14:15,979 django.db.backends: (0.000) BEGIN; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:15,981 django.db.backends: (0.001) DELETE FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:14:15,982 django.db.backends: (0.001) COMMIT; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:15,985 django.db.backends: (0.001) SELECT `mercado_itemcompra`.`id`, `mercado_itemcompra`.`historico_id`, `mercado_itemcompra`.`descricao` FROM `mercado_itemcompra` WHERE `mercado_itemcompra`.`historico_id` = 12; args=(12,); alias=default
+[DEBUG] 2025-06-03 22:14:16,003 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:14:16,005 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:14:16,007 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:13,019 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:13,021 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:13,025 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:13,868 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:13,870 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:13,875 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:15,956 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:15,957 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:15,960 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Banana', 1, 3.00); args=[2, 'Banana', 1, Decimal('3.00')]; alias=default
+[DEBUG] 2025-06-03 22:15:15,972 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:15,973 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:15,976 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:17,036 django.db.backends: (0.001) 
+                SELECT VERSION(),
+                       @@sql_mode,
+                       @@default_storage_engine,
+                       @@sql_auto_is_null,
+                       @@lower_case_table_names,
+                       CONVERT_TZ('2001-01-01 01:00:00', 'UTC', 'UTC') IS NOT NULL
+            ; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:17,039 django.db.backends: (0.001) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:17,044 django.db.backends: (0.002) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:17,050 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:18,635 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:18,636 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:18,640 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Água', 1, 2.00); args=[2, 'Água', 1, Decimal('2.00')]; alias=default
+[DEBUG] 2025-06-03 22:15:18,648 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:18,649 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:18,652 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:19,621 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:19,624 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:19,628 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:20,476 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:20,477 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:20,481 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:22,362 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:22,364 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:22,368 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Sabão em Pó', 1, 6.00); args=[2, 'Sabão em Pó', 1, Decimal('6.00')]; alias=default
+[DEBUG] 2025-06-03 22:15:22,376 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:22,377 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:22,379 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:23,412 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:23,415 django.db.backends: (0.002) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:23,422 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:25,404 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:25,405 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:25,408 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Bolo', 1, 12.99); args=[2, 'Bolo', 1, Decimal('12.99')]; alias=default
+[DEBUG] 2025-06-03 22:15:25,426 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:25,427 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:25,430 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:26,438 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:26,441 django.db.backends: (0.002) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:26,447 django.db.backends: (0.002) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:28,235 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:28,236 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:28,239 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Café', 1, 25.00); args=[2, 'Café', 1, Decimal('25.00')]; alias=default
+[DEBUG] 2025-06-03 22:15:28,251 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:28,252 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:28,255 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:29,428 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:29,430 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:29,436 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:32,296 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:32,299 django.db.backends: (0.002) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:32,305 django.db.backends: (0.002) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:33,932 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:33,934 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:33,938 django.db.backends: (0.002) INSERT INTO `mercado_itemcarrinho` (`carrinho_id`, `descricao`, `quantidade`, `preco_unitario`) VALUES (2, 'Queijo', 1, 10.00); args=[2, 'Queijo', 1, Decimal('10.00')]; alias=default
+[DEBUG] 2025-06-03 22:15:33,956 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:33,957 django.db.backends: (0.000) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:33,959 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:36,871 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:36,873 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:36,875 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:44,460 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:44,461 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:44,463 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:44,467 django.db.backends: (0.002) INSERT INTO `mercado_historicocompra` (`total`, `data_compra`) VALUES (58.99, '2025-06-04 01:15:44.464749'); args=[Decimal('58.99'), '2025-06-04 01:15:44.464749']; alias=default
+[DEBUG] 2025-06-03 22:15:44,469 django.db.backends: (0.001) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (13, 'Banana'); args=[13, 'Banana']; alias=default
+[DEBUG] 2025-06-03 22:15:44,471 django.db.backends: (0.001) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (13, 'Água'); args=[13, 'Água']; alias=default
+[DEBUG] 2025-06-03 22:15:44,474 django.db.backends: (0.002) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (13, 'Sabão em Pó'); args=[13, 'Sabão em Pó']; alias=default
+[DEBUG] 2025-06-03 22:15:44,477 django.db.backends: (0.003) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (13, 'Bolo'); args=[13, 'Bolo']; alias=default
+[DEBUG] 2025-06-03 22:15:44,479 django.db.backends: (0.001) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (13, 'Café'); args=[13, 'Café']; alias=default
+[DEBUG] 2025-06-03 22:15:44,481 django.db.backends: (0.001) INSERT INTO `mercado_itemcompra` (`historico_id`, `descricao`) VALUES (13, 'Queijo'); args=[13, 'Queijo']; alias=default
+[DEBUG] 2025-06-03 22:15:44,482 django.db.backends: (0.000) BEGIN; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:44,484 django.db.backends: (0.001) DELETE FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
+[DEBUG] 2025-06-03 22:15:44,485 django.db.backends: (0.001) COMMIT; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:44,487 django.db.backends: (0.000) SELECT `mercado_itemcompra`.`id`, `mercado_itemcompra`.`historico_id`, `mercado_itemcompra`.`descricao` FROM `mercado_itemcompra` WHERE `mercado_itemcompra`.`historico_id` = 13; args=(13,); alias=default
+[DEBUG] 2025-06-03 22:15:44,504 django.db.backends: (0.000) SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED; args=None; alias=default
+[DEBUG] 2025-06-03 22:15:44,506 django.db.backends: (0.001) SELECT `mercado_carrinho`.`id`, `mercado_carrinho`.`cpf`, `mercado_carrinho`.`criado_em`, `mercado_carrinho`.`atualizado_em` FROM `mercado_carrinho` WHERE `mercado_carrinho`.`cpf` = '054.034.501-65' LIMIT 21; args=('054.034.501-65',); alias=default
+[DEBUG] 2025-06-03 22:15:44,509 django.db.backends: (0.001) SELECT `mercado_itemcarrinho`.`id`, `mercado_itemcarrinho`.`carrinho_id`, `mercado_itemcarrinho`.`descricao`, `mercado_itemcarrinho`.`quantidade`, `mercado_itemcarrinho`.`preco_unitario` FROM `mercado_itemcarrinho` WHERE `mercado_itemcarrinho`.`carrinho_id` = 2; args=(2,); alias=default
